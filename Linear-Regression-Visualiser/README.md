@@ -1,17 +1,37 @@
 # Linear-Regression-Visualizer
 
 To run the application
-First Make sure to have the following dependencies:
 
-- python=3.9.5
-- flask=2.0.1
-- flask-sqlalchemy=2.5
-- scikit-learn=0.24.2
+First cd to the React-Component Directory\
 
-Then run the server by the command:
+```sh
+cd .\Linear-Regression-Visualiser\React-Component\
+```
 
-`python server.py`
+## To start the production version:
 
-after that open the link\
-[http://127.0.0.1:5000/](http://127.0.0.1:5000/)\
-in any browser.
+serve using the following command
+
+```sh
+serve -s build
+```
+
+if don't have serve you can install it by running:
+
+```sh
+npm install --global serve
+```
+
+## To start the development version:
+
+Install the dependencies using
+
+```sh
+npm install
+```
+
+then run using
+
+```sh
+npm start
+```
