@@ -5,9 +5,9 @@ function _1(md) {
 }
 
 function _resetButton(Inputs, d3, regressionPlot) {
-  const resetButton = Inputs.button("Reset");
+  const resetButton = Inputs.button('Reset');
 
-  d3.select(resetButton).on("input", () => {
+  d3.select(resetButton).on('input', () => {
     regressionPlot.reset();
   });
 
@@ -16,11 +16,11 @@ function _resetButton(Inputs, d3, regressionPlot) {
 
 function _viewOptions(Inputs, d3, regressionPlot) {
   const viewOptions = Inputs.radio(
-    ["None", "Absolute Error", "Squared Error"],
-    { label: "View", value: "Absolute Error" }
+    ['None', 'Absolute Error', 'Squared Error'],
+    { label: 'View', value: 'Absolute Error' }
   );
 
-  d3.select(viewOptions).on("input", () => {
+  d3.select(viewOptions).on('input', () => {
     regressionPlot.updateView(viewOptions.value);
   });
 
@@ -40,7 +40,7 @@ function _regressionPlot(RegressionPlot, data, width, d3, rSquaredPlot) {
     showGrid: true,
   });
   // Attach listener
-  d3.select(regressionPlot).on("input", function () {
+  d3.select(regressionPlot).on('input', function () {
     rSquaredPlot.update(this.value, this.transition);
   });
 
@@ -51,30 +51,25 @@ function _regressionPlot(RegressionPlot, data, width, d3, rSquaredPlot) {
 
 function _6(tex, md) {
   return md`Improve your intuition about the behaviour of linear regression!
-
-Here are the interactions that are possible:
-- **Click** anywhere on the plot to *insert* a new data point.
-- **Drag** any data point to *modify* its position.
-- **Click** any data point to *remove* it from the plot.
-
-The best-fit line will adjust accordingly to minimize the mean-squared error on the current data points. The [${tex`R^2`} value](https://en.wikipedia.org/wiki/Coefficient_of_determination) is also displayed.
-
-
-### Some pointers for exploration:
-- What happens when you add a data point to the far-left/right sides of the plot (an outlier), and adjust its y-value (dragging it up and down)?
-- What happens when you add a data point to the middle of the plot (among the common data points), and adjust its y-value?
-- When is the ${tex`R^2`} value close to 0? When is it close to 1?
-- What happens when you increase/decrease the density of data points on various parts of the plot?
-- ...
-`;
+  Here are the interactions that are possible:
+  - **Click** anywhere on the plot to *insert* a new data point.
+  - **Drag** any data point to *modify* its position.
+  - **Click** any data point to *remove* it from the plot.
+  The best-fit line will adjust accordingly to minimize the mean-squared error on the current data points. The [${tex`R^2`} value](https://en.wikipedia.org/wiki/Coefficient_of_determination) is also displayed.
+  ### Some pointers for exploration:
+  - What happens when you add a data point to the far-left/right sides of the plot (an outlier), and adjust its y-value (dragging it up and down)?
+  - What happens when you add a data point to the middle of the plot (among the common data points), and adjust its y-value?
+  - When is the ${tex`R^2`} value close to 0? When is it close to 1?
+  - What happens when you increase/decrease the density of data points on various parts of the plot?
+  - ...
+  `;
 }
 
 function _7(md) {
   return md`
----
-
-## Appendix
-  `;
+  ---
+  ## Appendix
+    `;
 }
 
 function _width() {
@@ -133,14 +128,14 @@ function _RSquaredPlot(d3) {
       .range([marginLeft, width - marginRight]);
 
     const svg = d3
-      .create("svg")
-      .attr("width", width)
-      .attr("height", height)
-      .attr("viewBox", [0, 0, width, height])
-      .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+      .create('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .attr('viewBox', [0, 0, width, height])
+      .attr('style', 'max-width: 100%; height: auto; height: intrinsic;');
 
     // Draw title.
-    const titleGroup = svg.append("g");
+    const titleGroup = svg.append('g');
 
     // titleGroup
     //   .append("line")
@@ -151,33 +146,33 @@ function _RSquaredPlot(d3) {
     //   .attr("y2", height);
 
     titleGroup
-      .append("text")
-      .attr("fill", "black")
-      .attr("text-anchor", "end")
-      .attr("dominant-baseline", "middle")
-      .attr("font-family", "serif")
-      .attr("font-size", titleSize)
-      .attr("x", xScale(0))
-      .attr("dx", -10)
-      .attr("y", height / 2)
-      .text("R²");
+      .append('text')
+      .attr('fill', 'black')
+      .attr('text-anchor', 'end')
+      .attr('dominant-baseline', 'middle')
+      .attr('font-family', 'serif')
+      .attr('font-size', titleSize)
+      .attr('x', xScale(0))
+      .attr('dx', -10)
+      .attr('y', height / 2)
+      .text('R²');
 
     // Draw whole bar.
     svg
-      .append("g")
-      .append("rect")
-      .attr("fill", "gainsboro")
-      .attr("x", xScale(0))
-      .attr("y", marginTop)
-      .attr("width", width - marginLeft - marginRight)
-      .attr("height", height - marginTop - marginBottom);
+      .append('g')
+      .append('rect')
+      .attr('fill', 'gainsboro')
+      .attr('x', xScale(0))
+      .attr('y', marginTop)
+      .attr('width', width - marginLeft - marginRight)
+      .attr('height', height - marginTop - marginBottom);
 
     // Draw bar.
-    const bar = updateBar(svg.append("g").selectAll("rect"), 0);
+    const bar = updateBar(svg.append('g').selectAll('rect'), 0);
 
     // Draw label
-    const labelFormat = d3.format(".2f");
-    const label = updateLabel(svg.append("g").selectAll("text"), 0);
+    const labelFormat = d3.format('.2f');
+    const label = updateLabel(svg.append('g').selectAll('text'), 0);
 
     // Update according to data.
     update(data);
@@ -186,17 +181,17 @@ function _RSquaredPlot(d3) {
       return rect.data([data]).join(
         (enter) =>
           enter
-            .append("rect")
-            .attr("fill", "black")
-            .attr("x", xScale(0))
-            .attr("y", marginTop)
-            .attr("width", 0)
-            .attr("height", height - marginTop - marginBottom),
+            .append('rect')
+            .attr('fill', 'black')
+            .attr('x', xScale(0))
+            .attr('y', marginTop)
+            .attr('width', 0)
+            .attr('height', height - marginTop - marginBottom),
         (update) =>
           update.call((update) => {
             if (transition) update = update.transition();
 
-            update.attr("width", (d) => xScale(isNaN(d) ? 0 : d) - xScale(0));
+            update.attr('width', (d) => xScale(isNaN(d) ? 0 : d) - xScale(0));
           })
       );
     }
@@ -205,17 +200,17 @@ function _RSquaredPlot(d3) {
       return text.data([data]).join(
         (enter) =>
           enter
-            .append("text")
-            .attr("dominant-baseline", "middle")
-            .attr("font-family", "sans-serif")
-            .attr("font-size", labelSize)
-            .attr("font-weight", "bold")
-            .attr("fill", "black")
-            .attr("text-anchor", "start")
-            .attr("dx", 10)
-            .attr("x", xScale(0))
-            .attr("y", height / 2)
-            .text(labelFormat("0")),
+            .append('text')
+            .attr('dominant-baseline', 'middle')
+            .attr('font-family', 'sans-serif')
+            .attr('font-size', labelSize)
+            .attr('font-weight', 'bold')
+            .attr('fill', 'black')
+            .attr('text-anchor', 'start')
+            .attr('dx', 10)
+            .attr('x', xScale(0))
+            .attr('y', height / 2)
+            .text(labelFormat('0')),
         (update) =>
           update.call((update) => {
             // Check if bar is too short
@@ -224,11 +219,11 @@ function _RSquaredPlot(d3) {
             if (transition) update = update.transition();
 
             update
-              .attr("x", (d) => xScale(d))
+              .attr('x', (d) => xScale(d))
               .text((d) => labelFormat(d))
-              .attr("fill", (d) => (check(d) ? "black" : "white"))
-              .attr("text-anchor", (d) => (check(d) ? "start" : "end"))
-              .attr("dx", (d) => (check(d) ? 10 : -10));
+              .attr('fill', (d) => (check(d) ? 'black' : 'white'))
+              .attr('text-anchor', (d) => (check(d) ? 'start' : 'end'))
+              .attr('dx', (d) => (check(d) ? 10 : -10));
           })
       );
     }
@@ -279,7 +274,7 @@ function _RegressionPlot(d3) {
     const drag = d3
       .drag()
       // .on("start", dragstarted)
-      .on("drag", dragged);
+      .on('drag', dragged);
     // .on("end", dragended);
 
     // To give each data point a unique id
@@ -315,28 +310,28 @@ function _RegressionPlot(d3) {
 
     // Draw svg.
     const svg = d3
-      .create("svg")
-      .attr("width", width)
-      .attr("height", height)
-      .attr("viewBox", [0, 0, width, height])
-      .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+      .create('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .attr('viewBox', [0, 0, width, height])
+      .attr('style', 'max-width: 100%; height: auto; height: intrinsic;');
 
     // Draw xAxis.
     const axisOpacity = 1;
 
     const xGroup = svg
-      .append("g")
-      .attr("transform", `translate(0,${height - marginBottom})`)
-      .attr("opacity", axisOpacity)
+      .append('g')
+      .attr('transform', `translate(0,${height - marginBottom})`)
+      .attr('opacity', axisOpacity)
       .call(xAxis)
-      .call((g) => g.select(".domain").remove());
+      .call((g) => g.select('.domain').remove());
     // Draw grid lines
     xGroup
-      .selectAll(".tick line")
+      .selectAll('.tick line')
       .clone()
-      .attr("y2", marginTop + marginBottom - height)
+      .attr('y2', marginTop + marginBottom - height)
       // Draw line at origin
-      .attr("stroke-opacity", (d) => {
+      .attr('stroke-opacity', (d) => {
         if (d == 0) {
           return axisOpacity;
         } else {
@@ -346,17 +341,17 @@ function _RegressionPlot(d3) {
 
     // Draw yAxis.
     const yGroup = svg
-      .append("g")
-      .attr("transform", `translate(${marginLeft},0)`)
-      .attr("opacity", axisOpacity)
+      .append('g')
+      .attr('transform', `translate(${marginLeft},0)`)
+      .attr('opacity', axisOpacity)
       .call(yAxis)
-      .call((g) => g.select(".domain").remove());
+      .call((g) => g.select('.domain').remove());
     yGroup
-      .selectAll(".tick line")
+      .selectAll('.tick line')
       .clone()
-      .attr("x2", width - marginLeft - marginRight)
+      .attr('x2', width - marginLeft - marginRight)
       // Draw line at origin
-      .attr("stroke-opacity", (d) => {
+      .attr('stroke-opacity', (d) => {
         if (d == 0) {
           return axisOpacity;
         } else {
@@ -366,49 +361,49 @@ function _RegressionPlot(d3) {
 
     // Draw error squares.
     let errorSquares = updateErrorSquares(
-      svg.append("g").selectAll("rect"),
+      svg.append('g').selectAll('rect'),
       data
     );
 
     // Draw error lines.
-    let errorLines = updateErrorLines(svg.append("g").selectAll("line"), data);
+    let errorLines = updateErrorLines(svg.append('g').selectAll('line'), data);
 
     // Draw regression line.
     const regressionLineGroup = svg
-      .append("g")
-      .attr("stroke", "black")
-      .attr("stroke-width", 2);
+      .append('g')
+      .attr('stroke', 'black')
+      .attr('stroke-width', 2);
     // .attr("stroke-dasharray", "20,20");
 
     const regressionLine = updateRegressionLine(
-      regressionLineGroup.selectAll("line"),
+      regressionLineGroup.selectAll('line'),
       data
     );
 
     // Draw space for plot interactions.
     const plotRect = svg
-      .append("rect")
-      .attr("width", width)
-      .attr("height", height)
-      .attr("opacity", 0)
-      .on("click", addDatapoint);
+      .append('rect')
+      .attr('width', width)
+      .attr('height', height)
+      .attr('opacity', 0)
+      .on('click', addDatapoint);
 
     // Draw data points.
-    const circlesGroup = svg.append("g").attr("fill", "black");
-    let circles = updateCircles(circlesGroup.selectAll("circle"), data);
+    const circlesGroup = svg.append('g').attr('fill', 'black');
+    let circles = updateCircles(circlesGroup.selectAll('circle'), data);
 
     // Drag interactions for circles.
     function dragstarted(event, d) {
-      d3.select(this).raise().attr("stroke", "red");
+      d3.select(this).raise().attr('stroke', 'red');
     }
     function dragged(event, d) {
       d3.select(this)
         // Update data point, as well as its position on the plot
-        .attr("cx", () => {
+        .attr('cx', () => {
           d.xCoord = xScale.invert(event.x);
           return event.x;
         })
-        .attr("cy", () => {
+        .attr('cy', () => {
           d.yCoord = yScale.invert(event.y);
           return event.y;
         });
@@ -418,7 +413,7 @@ function _RegressionPlot(d3) {
       errorLines = updateErrorLines(errorLines, data, false);
     }
     function dragended(event, i) {
-      d3.select(this).attr("stroke", null);
+      d3.select(this).attr('stroke', null);
     }
 
     // Click interaction for circles.
@@ -445,18 +440,18 @@ function _RegressionPlot(d3) {
       // Dispatch event and R^2 value
       svg.node().value = regressionData.rSquared;
       svg.node().transition = transition;
-      svg.dispatch("input", { bubbles: true });
+      svg.dispatch('input', { bubbles: true });
 
       return line
         .data([regressionData])
-        .join("line")
+        .join('line')
         .call((line) => {
           if (transition) line = line.transition();
           line
-            .attr("x1", (d) => xScale(d[0][0]))
-            .attr("x2", (d) => xScale(d[1][0]))
-            .attr("y1", (d) => yScale(d[0][1]))
-            .attr("y2", (d) => yScale(d[1][1]));
+            .attr('x1', (d) => xScale(d[0][0]))
+            .attr('x2', (d) => xScale(d[1][0]))
+            .attr('y1', (d) => yScale(d[0][1]))
+            .attr('y2', (d) => yScale(d[1][1]));
         });
     }
 
@@ -467,31 +462,31 @@ function _RegressionPlot(d3) {
         .join(
           (enter) =>
             enter
-              .append("circle")
-              .attr("cx", (d) => xScale(d.xCoord))
-              .attr("cy", (d) => yScale(d.yCoord))
+              .append('circle')
+              .attr('cx', (d) => xScale(d.xCoord))
+              .attr('cy', (d) => yScale(d.yCoord))
               // To transition from 0 radius
-              .attr("r", 0)
+              .attr('r', 0)
               // Attach interactions
               .call(drag)
-              .on("click", removeDatapoint)
+              .on('click', removeDatapoint)
               // Add transition
               .call((enter) =>
                 enter
                   .transition()
                   .ease(d3.easeBackOut.overshoot(1.7))
-                  .attr("r", r)
+                  .attr('r', r)
               ),
           (update) =>
             update
               .transition()
-              .attr("cx", (d) => xScale(d.xCoord))
-              .attr("cy", (d) => yScale(d.yCoord)),
+              .attr('cx', (d) => xScale(d.xCoord))
+              .attr('cy', (d) => yScale(d.yCoord)),
           (exit) =>
             exit
               .transition()
               .ease(d3.easeBackIn.overshoot(1.7))
-              .attr("r", 0)
+              .attr('r', 0)
               .remove()
         );
     }
@@ -505,34 +500,34 @@ function _RegressionPlot(d3) {
         .join(
           (enter) =>
             enter
-              .append("line")
-              .attr("stroke", errorColor)
-              .attr("stroke-width", 2)
-              .attr("opacity", errorLinesOpacity)
+              .append('line')
+              .attr('stroke', errorColor)
+              .attr('stroke-width', 2)
+              .attr('opacity', errorLinesOpacity)
               // Start at data point
-              .attr("x1", (d) => xScale(d.xCoord))
-              .attr("y1", (d) => yScale(d.yCoord))
-              .attr("x2", (d) => xScale(d.xCoord))
-              .attr("y2", (d) => yScale(d.yCoord))
+              .attr('x1', (d) => xScale(d.xCoord))
+              .attr('y1', (d) => yScale(d.yCoord))
+              .attr('x2', (d) => xScale(d.xCoord))
+              .attr('y2', (d) => yScale(d.yCoord))
               // Add transition
               .call((enter) =>
                 enter
                   .transition()
-                  .attr("y2", (d) => yScale(regressionData.predict(d.xCoord)))
+                  .attr('y2', (d) => yScale(regressionData.predict(d.xCoord)))
               ),
           (update) =>
             update.call((update) => {
               if (transition) update = update.transition();
               update
-                .attr("x1", (d) => xScale(d.xCoord))
-                .attr("y1", (d) => yScale(d.yCoord))
-                .attr("x2", (d) => xScale(d.xCoord))
-                .attr("y2", (d) => yScale(regressionData.predict(d.xCoord)));
+                .attr('x1', (d) => xScale(d.xCoord))
+                .attr('y1', (d) => yScale(d.yCoord))
+                .attr('x2', (d) => xScale(d.xCoord))
+                .attr('y2', (d) => yScale(regressionData.predict(d.xCoord)));
             }),
           (exit) =>
             exit
               .transition()
-              .attr("y2", (d) => yScale(d.yCoord))
+              .attr('y2', (d) => yScale(d.yCoord))
               .remove()
         );
     }
@@ -560,37 +555,37 @@ function _RegressionPlot(d3) {
         .join(
           (enter) =>
             enter
-              .append("rect")
-              .attr("stroke", "none")
-              .attr("fill", errorColor)
-              .attr("opacity", errorSquaresOpacity)
-              .attr("transform", computeTransform)
+              .append('rect')
+              .attr('stroke', 'none')
+              .attr('fill', errorColor)
+              .attr('opacity', errorSquaresOpacity)
+              .attr('transform', computeTransform)
               // Start at data point
-              .attr("x", (d) => xScale(d.xCoord))
-              .attr("y", (d) => yScale(d.yCoord))
-              .attr("width", 0)
-              .attr("height", 0)
+              .attr('x', (d) => xScale(d.xCoord))
+              .attr('y', (d) => yScale(d.yCoord))
+              .attr('width', 0)
+              .attr('height', 0)
               // Add transition
               .call((enter) => {
                 enter
                   .transition()
-                  .attr("width", computeHeight)
-                  .attr("height", computeHeight);
+                  .attr('width', computeHeight)
+                  .attr('height', computeHeight);
               }),
           (update) =>
             update.call((update) => {
-              update.attr("transform", computeTransform);
+              update.attr('transform', computeTransform);
 
               if (transition) update = update.transition();
 
               update
-                .attr("x", (d) => xScale(d.xCoord))
-                .attr("y", (d) => yScale(d.yCoord))
-                .attr("width", computeHeight)
-                .attr("height", computeHeight);
+                .attr('x', (d) => xScale(d.xCoord))
+                .attr('y', (d) => yScale(d.yCoord))
+                .attr('width', computeHeight)
+                .attr('height', computeHeight);
             }),
           (exit) =>
-            exit.transition().attr("width", 0).attr("height", 0).remove()
+            exit.transition().attr('width', 0).attr('height', 0).remove()
         );
     }
 
@@ -601,24 +596,24 @@ function _RegressionPlot(d3) {
 
     // Updates which error type to show
     function updateView(option) {
-      if (option === "None") {
+      if (option === 'None') {
         errorLinesOpacity = 0;
         errorSquaresOpacity = 0;
 
-        errorLines.transition().attr("opacity", 0);
-        errorSquares.transition().attr("opacity", 0);
-      } else if (option === "Absolute Error") {
+        errorLines.transition().attr('opacity', 0);
+        errorSquares.transition().attr('opacity', 0);
+      } else if (option === 'Absolute Error') {
         errorLinesOpacity = 1;
         errorSquaresOpacity = 0;
 
-        errorLines.transition().attr("opacity", 1);
-        errorSquares.transition().attr("opacity", 0);
-      } else if (option === "Squared Error") {
+        errorLines.transition().attr('opacity', 1);
+        errorSquares.transition().attr('opacity', 0);
+      } else if (option === 'Squared Error') {
         errorLinesOpacity = 0;
         errorSquaresOpacity = 0.5;
 
-        errorLines.transition().attr("opacity", 0);
-        errorSquares.transition().attr("opacity", 0.5);
+        errorLines.transition().attr('opacity', 0);
+        errorSquares.transition().attr('opacity', 0.5);
       }
     }
 
@@ -651,41 +646,41 @@ function _RegressionPlot(d3) {
 }
 
 function _d3(require) {
-  return require("d3-regression", "d3");
+  return require('d3-regression', 'd3');
 }
 
 export default function define(runtime, observer) {
   const main = runtime.module();
-  main.variable(observer()).define(["md"], _1);
+  main.variable(observer()).define(['md'], _1);
   main
-    .variable(observer("resetButton"))
-    .define("resetButton", ["Inputs", "d3", "regressionPlot"], _resetButton);
+    .variable(observer('resetButton'))
+    .define('resetButton', ['Inputs', 'd3', 'regressionPlot'], _resetButton);
   main
-    .variable(observer("viewOptions"))
-    .define("viewOptions", ["Inputs", "d3", "regressionPlot"], _viewOptions);
+    .variable(observer('viewOptions'))
+    .define('viewOptions', ['Inputs', 'd3', 'regressionPlot'], _viewOptions);
   main
-    .variable(observer("rSquaredPlot"))
-    .define("rSquaredPlot", ["RSquaredPlot", "width"], _rSquaredPlot);
+    .variable(observer('rSquaredPlot'))
+    .define('rSquaredPlot', ['RSquaredPlot', 'width'], _rSquaredPlot);
   main
-    .variable(observer("regressionPlot"))
+    .variable(observer('regressionPlot'))
     .define(
-      "regressionPlot",
-      ["RegressionPlot", "data", "width", "d3", "rSquaredPlot"],
+      'regressionPlot',
+      ['RegressionPlot', 'data', 'width', 'd3', 'rSquaredPlot'],
       _regressionPlot
     );
-  main.variable(observer()).define(["tex", "md"], _6);
-  main.variable(observer()).define(["md"], _7);
-  main.variable(observer("width")).define("width", _width);
-  main.variable(observer("data")).define("data", ["d3"], _data);
+  main.variable(observer()).define(['tex', 'md'], _6);
+  main.variable(observer()).define(['md'], _7);
+  main.variable(observer('width')).define('width', _width);
+  main.variable(observer('data')).define('data', ['d3'], _data);
   main
-    .variable(observer("animation"))
-    .define("animation", ["d3", "data", "regressionPlot"], _animation);
+    .variable(observer('animation'))
+    .define('animation', ['d3', 'data', 'regressionPlot'], _animation);
   main
-    .variable(observer("RSquaredPlot"))
-    .define("RSquaredPlot", ["d3"], _RSquaredPlot);
+    .variable(observer('RSquaredPlot'))
+    .define('RSquaredPlot', ['d3'], _RSquaredPlot);
   main
-    .variable(observer("RegressionPlot"))
-    .define("RegressionPlot", ["d3"], _RegressionPlot);
-  main.variable(observer("d3")).define("d3", ["require"], _d3);
+    .variable(observer('RegressionPlot'))
+    .define('RegressionPlot', ['d3'], _RegressionPlot);
+  main.variable(observer('d3')).define('d3', ['require'], _d3);
   return main;
 }
