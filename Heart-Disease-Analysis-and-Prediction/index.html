@@ -37,11 +37,11 @@
 
         <div class="navbar-collapse collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a data-nav-section="home" href="#">Home</a></li>
+                <!-- <li class="active"><a data-nav-section="home" href="#">Home</a></li> -->
                 <li><a data-nav-section="features" href="#">Features</a></li>
                 <li><a data-nav-section="predict" href="#">Predict</a></li>
                 <li><a data-nav-section="analysis" href="#">Analysis</a></li>
-                <li><a data-nav-section="contact" href="#">Contact</a></li>
+                <!-- <li><a data-nav-section="contact" href="#">Contact</a></li> -->
             </ul>
         </div>
     </div>
@@ -69,7 +69,7 @@
     <span class="icon icon-align-top"></span>
 </button>
 
-<section class="probootstrap-section">
+<!-- <section class="probootstrap-section">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -104,7 +104,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="probootstrap-section probootstrap-bg-light" data-section="features" id="features">
     <div class="container">
@@ -191,6 +191,11 @@
                     <li class="probootstrap-check">Easy to understand</li>
                     <li class="probootstrap-check">Easy to modify</li>
                     <li class="probootstrap-check">Written in Python and Jupyter Notebook</li>
+                    Initialization: K centroids are randomly initialized
+Assignment step: Each of the N data-points is assigned to the nearest cluster (centroid)
+Update step: When all N nodes have been assigned, the new K centroids are computed by taking the average of the datapoints in each cluster
+Go to step 2 and repeat until the datapoints stop changing clusters
+Given below is a simulation of K-Means. Scroll below to find the buttons and instructions for interacting with this tool
                 </ul>
             </div>
             <div class="col-md-8 probootstrap-animate">
