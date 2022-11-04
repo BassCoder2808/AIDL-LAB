@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { Runtime, Inspector } from "./runtime.js";
 import notebook from "./main.js";
 import "./style.css";
-function InteractiveVisualizationOfLinearRegression() {
+function Visualiser() {
   const resetButtonRef = useRef();
   const viewOptionsRef = useRef();
   const rSquaredPlotRef = useRef();
@@ -26,38 +26,41 @@ function InteractiveVisualizationOfLinearRegression() {
 
   return (
     <div className="container">
-      <div ref={viewOptionsRef} />
-
-      <div ref={rSquaredPlotRef} />
-      <div ref={regressionPlotRef} />
-      <div ref={widthRef} />
-      <div ref={resetButtonRef} />
-      <p>
+      <h3 className="item">
+        Improve your intuition about the behaviour of linear regression!
+      </h3>
+      <div className="item" ref={viewOptionsRef} />
+      <div className="item" ref={rSquaredPlotRef} />
+      <div className="item" ref={regressionPlotRef} />
+      <div className="item" ref={widthRef} />
+      <div className="item" ref={resetButtonRef} />
+      <p className="item">
         Credit: <a href="https://observablehq.com/">@observablehq</a>
       </p>
-      <p>
-        <h3>
-          Improve your intuition about the behaviour of linear regression!
-        </h3>
-        <br /> Here are the interactions that are possible: <br />
-        <ul>
-          <li>
-            <b>Click</b> anywhere on the plot to insert a new data point. Drag
-            any data point to modify its position.
-          </li>
-          <li>
-            <b>Drag</b> any data point to modify its position.
-          </li>
-          <li>
-            <b>Click</b> any data point to remove it from the plot.
-          </li>
-        </ul>
-        <br /> The best-fit line will adjust accordingly to minimize the
-        mean-squared error on the current data points. The R^2 value is also
+      <br />
+      <section className="item">
+        Here are the interactions that are possible:
+      </section>
+      <br />
+      <ul>
+        <li>
+          <b>Click</b> anywhere on the plot to insert a new data point.
+        </li>
+        <li>
+          <b>Drag</b> any data point to modify its position.
+        </li>
+        <li>
+          <b>Click</b> any data point to remove it from the plot.
+        </li>
+      </ul>
+      <br />
+      <section>
+        The best-fit line will adjust accordingly to minimize the mean-squared
+        error on the current data points. The R<sup>2</sup> value is also
         displayed.
-      </p>
+      </section>
     </div>
   );
 }
 
-export default InteractiveVisualizationOfLinearRegression;
+export default Visualiser;

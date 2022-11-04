@@ -5,7 +5,7 @@ To run the application
 First cd to the React-Component Directory\
 
 ```sh
-cd .\Linear-Regression-Visualiser\React-Component\
+cd .\Linear-Regression-Visualiser\visualiser\
 ```
 
 ## To start the production version:
