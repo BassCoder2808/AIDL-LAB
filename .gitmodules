@@ -1,0 +1,3 @@
+[submodule "OldWebsite/Vlabs-Copy"]
+	path = OldWebsite/Vlabs-Copy
+	url = https://github.com/pranatiB/Vlabs-Copy.git
