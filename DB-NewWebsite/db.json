@@ -3,33 +3,65 @@
     {
       "id": "1",
       "aim": "Aim",
-      "pageContent": "<h2 style=\"text-align: center;\">Lorem Ipsum is a placeholder Text</h2>",
+      "pageContent": `<div>
+      <h2>COURSE CONTENT</h2>
+      </div>
+      <div>
+      <h2>Concept</h2>
+      <center>
+      <h3>BackPropagation</h3>
+      </center>
+      <p>The Backpropagation neural network is a multilayered, feedforward neural network and is by far the most extensively used. It is also considered one of the simplest and most general methods used for supervised training of multilayered neural networks. Backpropagation works by approximating the non-linear relationship between the input and the output by adjusting the weight values internally. It can further be generalized for the input that is not included in the training patterns (predictive abilities).</p>
+      <p>Generally, the Backpropagation network has two stages, training and testing. During the training phase, the network is "shown" sample inputs and the correct classifications. For example, the input might be an encoded picture of a face, and the output could be represented by a code that corresponds to the name of the person.</p>
+      <p>A further note on encoding information - a neural network, as most learning algorithms, needs to have the inputs and outputs encoded according to an arbitrary user defined scheme. The scheme will define the network architecture so that once a network is trained, the scheme cannot be changed without creating a totally new net. Similarly there are many forms of encoding the network response.</p>
+      <p>The following figure shows the topology of the Backpropagation neural network that includes and input layer, one hidden layer and an output layer. It should be noted that Backpropagation neural networks can have more than one hidden layer.</p>
+      <center><img style="width: 1879px;" src="https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/e2b.png"></center><br><br><br>
+      <h2>Procedure</h2>
+      <center>
+      <div><strong>Step 0.</strong>&nbsp;Set w and alpha (learning to random rate) values.<br><strong>Step 1.</strong>&nbsp;Perform steps 2 to 9 when stopping condition is false.<br><strong>Step 2.</strong>&nbsp;Perform steps 3 to 8 for each training pair.<br><strong>Step 3.</strong>&nbsp;Receive ip signal from xi and transfer to zj<br><strong>Step 4.</strong>&nbsp;In Hidden Unit calculate the net ip and op:<br><img src="https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_netip.png" width="200" height="40"><br><img src="https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_netop.png" width="125" height="40"><br>The function used above is the bipolar sigmoid ie:<br><img src="https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_bipolar_sigmoid.png" width="100" height="40"><br>Its binary counterpart is:<img src="https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_binary_sigmoid.png" width="75" height="40"><br><strong>Step 5.</strong>&nbsp;Similarly, calculate the net ip and op for each op unit.<br><strong>Step 6.</strong>&nbsp;Calculate error correction factor for o/p unit.<br><img src="https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_err.png" width="175" height="40"><br><img src="https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_total_err.png" width="175" height="40"><br>and send this to hidden layer<br><strong>Step 7.</strong>&nbsp;Each hidden unit 'j', sums its delta inputs from op units.<br><img src="https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_offset.png" width="200" height="200"><br><strong>Step 8.</strong>&nbsp;Update the weight by weight(new) = weight(old) + offset<br><strong>Step 9.</strong>&nbsp;Check for stopping condition<br>*train certain no. of epochs<br>*where actual op equals to target op</div>
+      </center><br><br><br>
+      <h2>Illustration</h2>
+      <center><img style="width: 1879px;" src="https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/e2c.png"><img style="width: 1879px;" src="https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/e2d.png"></center><br><br><br>
+      <h2>References</h2>
+      <center><a href="https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/">a-step-by-step-backpropagation-example/</a></center></div>
+      `,
       "simulation-link": "Iframe link of Simulation",
       "test": [
         {
-          "question": "Question 1",
-          "options": ["Opt 1", "Opt 2", "Opt 3", "Opt 4"],
-          "correctOption": "Index of the Correct Option"
+          "id": 0,
+          "question": "What is the objective of backpropagation algorithm?",
+          "options": ["To develop learning algorithm for multilayer feedforward neural network", "To develop learning algorithm for single layer feedforward neural network", "To develop learning algorithm for multilayer feedforward neural network, so that network can be trained to capture the mapping implicitly"],
+          "correctOption": 2
         },
         {
-          "question": "Question 2",
-          "options": ["Opt 1", "Opt 2", "Opt 3", "Opt 4"],
-          "correctOption": "Index of the Correct Option"
+          "id": 1,
+          "question": "What is true regarding backpropagation rule ?",
+          "options": ["It is also called generalized delta rule", "Error in output is propagated backwards only to determine weight updates"`, "There is no feedback of signal at nay stage", "All of the mentioned"],
+          "correctOption": 2
         },
         {
-          "question": "Question 3",
-          "options": ["Opt 1", "Opt 2", "Opt 3", "Opt 4"],
-          "correctOption": "Index of the Correct Option"
+          "id": 2,
+          "question": "How can learning process be stopped in backpropagation rule?",
+          "options": ["There is convergence involved", "No heuristic criteria exist", "On basis of average gradient value", "None of the mentioned"],
+          "correctOption": 2
         },
         {
-          "question": "Question 4",
-          "options": ["Opt 1", "Opt 2", "Opt 3", "Opt 4"],
-          "correctOption": "Index of the Correct Option"
+          "id": 3,
+          "question": "There is feedback in final stage of backpropagation algorithm?",
+          "options": ["Yes", "No"],
+          "correctOption": 1
         },
         {
-          "question": "Question 5",
-          "options": ["Opt 1", "Opt 2", "Opt 3", "Opt 4"],
-          "correctOption": "Index of the Correct Option"
+          "id": 4,
+          "question": "What are general limitations of back propagation rule?",
+          "options": ["Local minima problem", "Slow convergence`, `Scaling", "All of the mentioned"],
+          "correctOption": 2
+        },
+        {
+          "id": 5,
+          "question": "What are the general tasks that are performed with backpropagation algorithm?",
+          "options": ["Pattern mapping", "Function approximation", "Prediction", "All of the mentioned"],
+          "correctOption": 3
         }
       ]
     },
