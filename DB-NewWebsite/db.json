@@ -3,25 +3,39 @@
     {
       "id": "1",
       "aim": "BackPropagation",
-      "pageContent": "<div><h2>COURSE CONTENT</h2></div><div><h2>Concept</h2><center><h3>BackPropagation</h3></center><p>The Backpropagation neural network is a multilayered, feedforward neural network and is by far the most extensively used. It is also considered one of the simplest and most general methods used for supervised training of multilayered neural networks. Backpropagation works by approximating the non-linear relationship between the input and the output by adjusting the weight values internally. It can further be generalized for the input that is not included in the training patterns (predictive abilities).</p><p>Generally, the Backpropagation network has two stages, training and testing. During the training phase, the network is \"shown\" sample inputs and the correct classifications. For example, the input might be an encoded picture of a face, and the output could be represented by a code that corresponds to the name of the person.</p><p>A further note on encoding information - a neural network, as most learning algorithms, needs to have the inputs and outputs encoded according to an arbitrary user defined scheme. The scheme will define the network architecture so that once a network is trained, the scheme cannot be changed without creating a totally new net. Similarly there are many forms of encoding the network response.</p><p>The following figure shows the topology of the Backpropagation neural network that includes and input layer, one hidden layer and an output layer. It should be noted that Backpropagation neural networks can have more than one hidden layer.</p><center><img style=\"width: 1879px;\" src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/e2b.png\"></center><br><br><br><h2>Procedure</h2><center><div><strong>Step 0.</strong>&nbsp;Set w and alpha (learning to random rate) values.<br><strong>Step 1.</strong>&nbsp;Perform steps 2 to 9 when stopping condition is false.<br><strong>Step 2.</strong>&nbsp;Perform steps 3 to 8 for each training pair.<br><strong>Step 3.</strong>&nbsp;Receive ip signal from xi and transfer to zj<br><strong>Step 4.</strong>&nbsp;In Hidden Unit calculate the net ip and op:<br><img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_netip.png\" width=\"200\" height=\"40\"><br><img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_netop.png\" width=\"125\" height=\"40\"><br>The function used above is the bipolar sigmoid ie:<br><img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_bipolar_sigmoid.png\" width=\"100\" height=\"40\"><br>Its binary counterpart is:<img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_binary_sigmoid.png\" width=\"75\" height=\"40\"><br><strong>Step 5.</strong>&nbsp;Similarly, calculate the net ip and op for each op unit.<br><strong>Step 6.</strong>&nbsp;Calculate error correction factor for o/p unit.<br><img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_err.png\" width=\"175\" height=\"40\"><br><img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_total_err.png\" width=\"175\" height=\"40\"><br>and send this to hidden layer<br><strong>Step 7.</strong>&nbsp;Each hidden unit 'j', sums its delta inputs from op units.<br><img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_offset.png\" width=\"200\" height=\"200\"><br><strong>Step 8.</strong>&nbsp;Update the weight by weight(new) = weight(old) + offset<br><strong>Step 9.</strong>&nbsp;Check for stopping condition<br>*train certain no. of epochs<br>*where actual op equals to target op</div></center><br><br><br><h2>Illustration</h2><center><img style=\"width: 1879px;\" src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/e2c.png\"><img style=\"width: 1879px;\" src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/e2d.png\"></center><br><br><br><h2>References</h2><center><a href=\"https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/\">a-step-by-step-backpropagation-example/</a></center></div>",
+      "pageContent": "<div><h2>COURSE CONTENT</h2></div><div><h2>Concept</h2><center><h3>BackPropagation</h3></center><p>The Backpropagation neural network is a multilayered, feedforward neural network and is by far the most extensively used. It is also considered one of the simplest and most general methods used for supervised training of multilayered neural networks. Backpropagation works by approximating the non-linear relationship between the input and the output by adjusting the weight values internally. It can further be generalized for the input that is not included in the training patterns (predictive abilities).</p><p>Generally, the Backpropagation network has two stages, training and testing. During the training phase, the network is \"shown\" sample inputs and the correct classifications. For example, the input might be an encoded picture of a face, and the output could be represented by a code that corresponds to the name of the person.</p><p>A further note on encoding information - a neural network, as most learning algorithms, needs to have the inputs and outputs encoded according to an arbitrary user defined scheme. The scheme will define the network architecture so that once a network is trained, the scheme cannot be changed without creating a totally new net. Similarly there are many forms of encoding the network response.</p><p>The following figure shows the topology of the Backpropagation neural network that includes and input layer, one hidden layer and an output layer. It should be noted that Backpropagation neural networks can have more than one hidden layer.</p><center><img style=\"width: 1879px;\" src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/e2b.png\"></center><br><br><br><h2>Procedure</h2><center><div><strong>Step 0.</strong>&nbsp;Set w and alpha (learning to random rate) values.<br><strong>Step 1.</strong>&nbsp;Perform steps 2 to 9 when stopping condition is false.<br><strong>Step 2.</strong>&nbsp;Perform steps 3 to 8 for each training pair.<br><strong>Step 3.</strong>&nbsp;Receive ip signal from xi and transfer to zj<br><strong>Step 4.</strong>&nbsp;In Hidden Unit calculate the net ip and op:<br><img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_netip.png\" width=\"200\" height=\"40\"><br><img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_netop.png\" width=\"125\" height=\"40\"><br>The function used above is the bipolar sigmoid ie:<br><img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_bipolar_sigmoid.png\" width=\"100\" height=\"40\"><br>Its binary counterpart is:<img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_binary_sigmoid.png\" width=\"75\" height=\"40\"><br><strong>Step 5.</strong>&nbsp;Similarly, calculate the net ip and op for each op unit.<br><strong>Step 6.</strong>&nbsp;Calculate error correction factor for o/p unit.<br><img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_err.png\" width=\"175\" height=\"40\"><br><img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_total_err.png\" width=\"175\" height=\"40\"><br>and send this to hidden layer<br><strong>Step 7.</strong>&nbsp;Each hidden unit \"j\", sums its delta inputs from op units.<br><img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/eqn_offset.png\" width=\"200\" height=\"200\"><br><strong>Step 8.</strong>&nbsp;Update the weight by weight(new) = weight(old) + offset<br><strong>Step 9.</strong>&nbsp;Check for stopping condition<br>*train certain no. of epochs<br>*where actual op equals to target op</div></center><br><br><br><h2>Illustration</h2><center><img style=\"width: 1879px;\" src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/e2c.png\"><img style=\"width: 1879px;\" src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/Backpropagation/e2d.png\"></center><br><br><br><h2>References</h2><center><a href=\"https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/\">a-step-by-step-backpropagation-example/</a></center></div>",
       "simulation-link": "Iframe link of Simulation",
       "test": [
         {
           "id": 0,
           "question": "What is the objective of backpropagation algorithm?",
-          "options": ["To develop learning algorithm for multilayer feedforward neural network", "To develop learning algorithm for single layer feedforward neural network", "To develop learning algorithm for multilayer feedforward neural network, so that network can be trained to capture the mapping implicitly"],
+          "options": [
+            "To develop learning algorithm for multilayer feedforward neural network",
+            "To develop learning algorithm for single layer feedforward neural network",
+            "To develop learning algorithm for multilayer feedforward neural network, so that network can be trained to capture the mapping implicitly"
+          ],
           "correctOption": 2
         },
         {
           "id": 1,
           "question": "What is true regarding backpropagation rule ?",
-          "options": ["It is also called generalized delta rule", "Error in output is propagated backwards only to determine weight updates", "There is no feedback of signal at nay stage", "All of the mentioned"],
+          "options": [
+            "It is also called generalized delta rule",
+            "Error in output is propagated backwards only to determine weight updates",
+            "There is no feedback of signal at nay stage",
+            "All of the mentioned"
+          ],
           "correctOption": 2
         },
         {
           "id": 2,
           "question": "How can learning process be stopped in backpropagation rule?",
-          "options": ["There is convergence involved", "No heuristic criteria exist", "On basis of average gradient value", "None of the mentioned"],
+          "options": [
+            "There is convergence involved",
+            "No heuristic criteria exist",
+            "On basis of average gradient value",
+            "None of the mentioned"
+          ],
           "correctOption": 2
         },
         {
@@ -33,13 +47,23 @@
         {
           "id": 4,
           "question": "What are general limitations of back propagation rule?",
-          "options": ["Local minima problem", "Slow convergence", "Scaling", "All of the mentioned"],
+          "options": [
+            "Local minima problem",
+            "Slow convergence",
+            "Scaling",
+            "All of the mentioned"
+          ],
           "correctOption": 2
         },
         {
           "id": 5,
           "question": "What are the general tasks that are performed with backpropagation algorithm?",
-          "options": ["Pattern mapping", "Function approximation", "Prediction", "All of the mentioned"],
+          "options": [
+            "Pattern mapping",
+            "Function approximation",
+            "Prediction",
+            "All of the mentioned"
+          ],
           "correctOption": 3
         }
       ]
@@ -53,55 +77,100 @@
         {
           "id": 0,
           "question": "For which purpose Convolutional Neural Network is used?",
-          "options": ["Mainly to process and analyse financial models, predicting future trends.", "It is a multi purpose alghrithm that can be used for Supervised Learning.", "It is a multi purpose alghorithm that can be used for Unsupervised Learning.","Mainly to process and analyse digital images, with some success cases involving processing voice and natural language."],
+          "options": [
+            "Mainly to process and analyse financial models, predicting future trends.",
+            "It is a multi purpose alghrithm that can be used for Supervised Learning.",
+            "It is a multi purpose alghorithm that can be used for Unsupervised Learning.",
+            "Mainly to process and analyse digital images, with some success cases involving processing voice and natural language."
+          ],
           "correctOption": 0
         },
         {
           "id": 1,
           "question": "What is the biggest advantage utilizing CNN?",
-          "options": ["It has the highest accuracy among all algorithms that predicts images.", "Little dependence on pre processing, decreasing the needs of human effort developing its functionalities.", "It works well both for Supervised and Unsupervised Learning.", "It is easy to understand and fast to implement."],
+          "options": [
+            "It has the highest accuracy among all algorithms that predicts images.",
+            "Little dependence on pre processing, decreasing the needs of human effort developing its functionalities.",
+            "It works well both for Supervised and Unsupervised Learning.",
+            "It is easy to understand and fast to implement."
+          ],
           "correctOption": 1
         },
         {
           "id": 2,
           "question": "Which answer explains better the Convolution?",
-          "options": ["Detect key features in images, respecting their spatial boundaries.", "It is a technique to standardize the dataset.", "It is the first step to use CNN.", "Understand the model features and selecting the best."],
+          "options": [
+            "Detect key features in images, respecting their spatial boundaries.",
+            "It is a technique to standardize the dataset.",
+            "It is the first step to use CNN.",
+            "Understand the model features and selecting the best."
+          ],
           "correctOption": 0
         },
         {
           "id": 3,
           "question": "Which answer explains better the ReLU?",
-          "options": ["Helps in the detection of features, increasing the non-linearity of the image, converting positive pixels to zero. This behavior allows you to detect variations of attributes.", "Helps in the detect0ion of features, decreasing the non-linearity of the image, converting negative pixels to zero. This behavior allows you to detect variations of attributes.","It is used to find the best features considering their correlation.","A technique that allows you to find outliers."],
+          "options": [
+            "Helps in the detection of features, increasing the non-linearity of the image, converting positive pixels to zero. This behavior allows you to detect variations of attributes.",
+            "Helps in the detect0ion of features, decreasing the non-linearity of the image, converting negative pixels to zero. This behavior allows you to detect variations of attributes.",
+            "It is used to find the best features considering their correlation.",
+            "A technique that allows you to find outliers."
+          ],
           "correctOption": 0
         },
         {
           "id": 4,
           "question": "Which answer explains better the Pooling?",
-          "options": ["Creates a pool of data in order to improve the accuracy of the alghorithm predicting images.", "It assists in the detection of features, even if they are distorted, in addition to decreasing the attribute sizes, resulting in decreased computational need. It is also very useful for extracting dominant attributes.", "It assists in the detection of distorted features, in order to find dominant attributes.", "Decrease the features size, in order to decrease the computional power that are needed."],
+          "options": [
+            "Creates a pool of data in order to improve the accuracy of the alghorithm predicting images.",
+            "It assists in the detection of features, even if they are distorted, in addition to decreasing the attribute sizes, resulting in decreased computational need. It is also very useful for extracting dominant attributes.",
+            "It assists in the detection of distorted features, in order to find dominant attributes.",
+            "Decrease the features size, in order to decrease the computional power that are needed."
+          ],
           "correctOption": 2
         },
         {
           "id": 5,
           "question": "Which answer explains better the Flattening?",
-          "options": ["Once we have the pooled feature map, this component transforms the information into a vector. It's the input we need to get on with Artificial Neural Networks.", "It is the last step of CNN.", "Delete unnecessary features to make our dataset cleaner.", "Transform images to vectors to make it easier to predict."],
+          "options": [
+            "Once we have the pooled feature map, this component transforms the information into a vector. It's the input we need to get on with Artificial Neural Networks.",
+            "It is the last step of CNN.",
+            "Delete unnecessary features to make our dataset cleaner.",
+            "Transform images to vectors to make it easier to predict."
+          ],
           "correctOption": 0
         },
         {
           "id": 6,
           "question": "Which answer explains better the Full Connection?",
-          "options": ["It is a componente that connects diferents alghorithms in order to increase the accuracy.", "It is the last step of CNN, where we connect the results of the earlier componentes to create a output.", "Full Connection acts by placing different weights in each synapse in order to minimize errors. This step can be repeated until an expected result is achieved.", "Full Connection acts by placing different weights in each synapse in order to minimize errors. No iteration is needed, since we can get the best results in our first attempt."],
+          "options": [
+            "It is a componente that connects diferents alghorithms in order to increase the accuracy.",
+            "It is the last step of CNN, where we connect the results of the earlier componentes to create a output.",
+            "Full Connection acts by placing different weights in each synapse in order to minimize errors. This step can be repeated until an expected result is achieved.",
+            "Full Connection acts by placing different weights in each synapse in order to minimize errors. No iteration is needed, since we can get the best results in our first attempt."
+          ],
           "correctOption": 2
         },
         {
           "id": 7,
           "question": "What are the Pooling Types? What are their characteristics?",
-          "options": ["Max Pooling and Std Pooling. Max pooling returns the maximum value of the portion covered by the kernel, while Std Pooling returns the standard deviation of that portion.", "Max Pooling and Minimum Pooling. Max pooling returns the maximum value of the portion covered by the kernel and suppresses the Noises, while Minimum pooling only returns the smallest value of that portion.", "Max Pooling and Average Pooling. Max pooling returns the maximum value of the portion covered by the kernel, while Average pooling returns the measure of that portion and suppresses the Noises.", "Max Pooling and Average Pooling. Max pooling returns the maximum value of the portion covered by the kernel and suppresses the Noises, while Average pooling only returns the measure of that portion."],
+          "options": [
+            "Max Pooling and Std Pooling. Max pooling returns the maximum value of the portion covered by the kernel, while Std Pooling returns the standard deviation of that portion.",
+            "Max Pooling and Minimum Pooling. Max pooling returns the maximum value of the portion covered by the kernel and suppresses the Noises, while Minimum pooling only returns the smallest value of that portion.",
+            "Max Pooling and Average Pooling. Max pooling returns the maximum value of the portion covered by the kernel, while Average pooling returns the measure of that portion and suppresses the Noises.",
+            "Max Pooling and Average Pooling. Max pooling returns the maximum value of the portion covered by the kernel and suppresses the Noises, while Average pooling only returns the measure of that portion."
+          ],
           "correctOption": 0
         },
         {
           "id": 8,
           "question": "What is the difference between CNN and ANN?",
-          "options": ["CNN is a easiest way to use Neural Networks.", "They complete eachother, so in order to use ANN, you need to start with CNN.", "CNN uses a more simpler alghorithm than ANN.", "CNN has one or more layers of convolution units, which receives its input from multiple units."],
+          "options": [
+            "CNN is a easiest way to use Neural Networks.",
+            "They complete eachother, so in order to use ANN, you need to start with CNN.",
+            "CNN uses a more simpler alghorithm than ANN.",
+            "CNN has one or more layers of convolution units, which receives its input from multiple units."
+          ],
           "correctOption": 3
         }
       ]
@@ -115,13 +184,18 @@
         {
           "id": 0,
           "question": "As an unsupervised algorithm, which of the following is not needed in K-Means?",
-          "options": ["features for train data","features for train data","labels for train data","labels for test data"],
+          "options": [
+            "features for train data",
+            "features for train data",
+            "labels for train data",
+            "labels for test data"
+          ],
           "correctOption": 3
         },
         {
           "id": 1,
           "question": "K-means is a type of ______ learning algorithm",
-          "options": ['reinforcement','lazy','supervised','recurrent'],
+          "options": ["reinforcement", "lazy", "supervised", "recurrent"],
           "correctOption": 1
         },
         {
@@ -132,51 +206,64 @@
         },
         {
           "id": 3,
-          "question": 'Which of the following is required by K-means clustering?'
-          ,
-              "options": ['defined distance metric','number of clusters','initial guess as to cluster centroids','all of the mentioned'],
-              "correctOption": 3
+          "question": "Which of the following is required by K-means clustering?",
+          "options": [
+            "defined distance metric",
+            "number of clusters",
+            "initial guess as to cluster centroids",
+            "all of the mentioned"
+          ],
+          "correctOption": 3
         },
         {
           "id": 4,
-          "question": 'The centroids in the K-means algorithm may not be any observed data points.',
-          "options": ['True','False'],
+          "question": "The centroids in the K-means algorithm may not be any observed data points.",
+          "options": ["True", "False"],
           "correctOption": 0
         },
         {
           "id": 5,
-          "question": 'The K-means algorithm can detect non-convex clusters.',
-          "options": ['True','False'],
+          "question": "The K-means algorithm can detect non-convex clusters.",
+          "options": ["True", "False"],
           "correctOption": 1
         },
         {
           "id": 6,
-          "question": 'Clustering should be done on samples of 300 or more.',
-          "options": ['True','False'],
+          "question": "Clustering should be done on samples of 300 or more.",
+          "options": ["True", "False"],
           "correctOption": 1
         },
         {
           "id": 7,
           "question": "Which of the following steps are repeatedly carried out in its inner-loop?",
-          "options": ['Assign each point to its nearest cluster',
-         'Test on the cross-validation set',
-          'Update the cluster centroids based the current assignment',    
-          'Using the elbow method to choose K'],
+          "options": [
+            "Assign each point to its nearest cluster",
+            "Test on the cross-validation set",
+            "Update the cluster centroids based the current assignment",
+            "Using the elbow method to choose K"
+          ],
           "correctOption": 0
         },
         {
           "id": 8,
-          "question": 'The most commonly used measure of similarity is the _____ or its square.',
-          "options": ['euclidean distance','city-block distance','Chebychev’s distance','Manhattan distance'],
+          "question": "The most commonly used measure of similarity is the _____ or its square.",
+          "options": [
+            "euclidean distance",
+            "city-block distance",
+            "Chebychev’s distance",
+            "Manhattan distance"
+          ],
           "correctOption": 0
         },
         {
           "id": 9,
           "question": "In which case can a clustering algorithm work?",
-          "options": ['Given sales data from a large number of products in a supermarket, estimate future sales for each of these products.',
-          'Predict the sentiment in a tweet as positive or negative',
-          "From the user's usage patterns on a website, identify different user groups.",
-          "Given historical weather records, predict if tomorrow's weather will be sunny or rainy."],
+          "options": [
+            "Given sales data from a large number of products in a supermarket, estimate future sales for each of these products.",
+            "Predict the sentiment in a tweet as positive or negative",
+            "From the user's usage patterns on a website, identify different user groups.",
+            "Given historical weather records, predict if tomorrow's weather will be sunny or rainy."
+          ],
           "correctOption": 2
         }
       ]
@@ -184,10 +271,7 @@
     {
       "id": "4",
       "aim": "K-Nearest Neighbor (KNN)",
-      "pageContent": "<h1>Overview</h1>
-      <p>In pattern recognition, the k-nearest neighbors algorithm (k-NN) is a non-parametric method proposed by Thomas Cover used for classification and regression.[1] In both cases, the input consists of the k closest training examples in the feature space. The output depends on whether k-NN is used for classification or regression<br><br></p>
-      <h1>References</h1>
-      <p><a href=\"https://www.tutorialspoint.com/machine_learning_with_python/machine_learning_with_python_knn_algorithm_finding_nearest_neighbors.htm">machine_learning_with_python_knn_algorithm_finding_nearest_neighbors</a></p>",
+      "pageContent": "<h1>Overview</h1><p>In pattern recognition, the k-nearest neighbors algorithm (k-NN) is a non-parametric method proposed by Thomas Cover used for classification and regression.[1] In both cases, the input consists of the k closest training examples in the feature space. The output depends on whether k-NN is used for classification or regression<br><br></p><h1>References</h1><p><a href=\"https://www.tutorialspoint.com/machine_learning_with_python/machine_learning_with_python_knn_algorithm_finding_nearest_neighbors.htm\">machine_learning_with_python_knn_algorithm_finding_nearest_neighbors</a></p>",
       "simulation-link": "Iframe link of Simulation",
       "test": [
         {
@@ -199,31 +283,54 @@
         {
           "id": 1,
           "question": "What can be kNN algorithm used for?",
-          "options": ["Classification", "Regression", "Both classification and regression", "None of these"],
+          "options": [
+            "Classification",
+            "Regression",
+            "Both classification and regression",
+            "None of these"
+          ],
           "correctOption": 1
         },
         {
           "id": 2,
           "question": "What can you say about bias in kNN?",
-          "options": ["Bias increases as k increases", "Bias increases as k decreases", "None of the mentioned"],
+          "options": [
+            "Bias increases as k increases",
+            "Bias increases as k decreases",
+            "None of the mentioned"
+          ],
           "correctOption": 0
         },
         {
           "id": 3,
           "question": "What can you say about variance in kNN?",
-          "options": ["Variance increases as k increases", "Variance increases as k decreases", "None of the mentioned"],
+          "options": [
+            "Variance increases as k increases",
+            "Variance increases as k decreases",
+            "None of the mentioned"
+          ],
           "correctOption": 1
         },
         {
           "id": 4,
           "question": "What would you do if you find noise in data, whilst using kNN?",
-          "options": ["Increase the value of k", "Decrease the value of k", "Noise does not depend on k value", "None of the mentioned"],
+          "options": [
+            "Increase the value of k",
+            "Decrease the value of k",
+            "Noise does not depend on k value",
+            "None of the mentioned"
+          ],
           "correctOption": 0
         },
         {
           "id": 5,
           "question": "Compare the time taken by: 1-NN, 2-NN, 3-NN",
-          "options": ["1-NN > 2-NN > 3-NN", "1-NN < 2-NN < 3-NN", "1-NN ~ 2-NN ~ 3-NN", "None of the mentioned"],
+          "options": [
+            "1-NN > 2-NN > 3-NN",
+            "1-NN < 2-NN < 3-NN",
+            "1-NN ~ 2-NN ~ 3-NN",
+            "None of the mentioned"
+          ],
           "correctOption": 0
         },
         {
@@ -241,7 +348,11 @@
         {
           "id": 8,
           "question": "Your kNN classifier gives very high accuracy on training data but is not at all accurate on client data. What is the reason?",
-          "options": ["Model is probably overfitted", "Model is probably underfitted", "Cannot determine"],
+          "options": [
+            "Model is probably overfitted",
+            "Model is probably underfitted",
+            "Cannot determine"
+          ],
           "correctOption": 0
         },
         {
@@ -253,31 +364,52 @@
         {
           "id": 10,
           "question": "Which one of the following is true about kNN classifier",
-          "options": ["Decision boundary is determined locally by nearest neighbour", "Also known as: Case-based learning", "1-NN is not robust"],
+          "options": [
+            "Decision boundary is determined locally by nearest neighbour",
+            "Also known as: Case-based learning",
+            "1-NN is not robust"
+          ],
           "correctOption": 0
         },
         {
           "id": 11,
           "question": "k in kNN signifies?",
-          "options": ["Number of nearest neighbours to consider", "Number of classes", "Both classes and nearest neighbours"],
+          "options": [
+            "Number of nearest neighbours to consider",
+            "Number of classes",
+            "Both classes and nearest neighbours"
+          ],
           "correctOption": 0
         },
         {
           "id": 12,
           "question": "What value of k is preferred in kNN algorithm?",
-          "options": ["Odd: So that there are no ties in voting", "Doesnt matter", "Even"],
+          "options": [
+            "Odd: So that there are no ties in voting",
+            "Doesnt matter",
+            "Even"
+          ],
           "correctOption": 0
         },
         {
           "id": 13,
           "question": "kNN classification algorithm is also known as:",
-          "options": ["Memory-based learner", "Case-based learner", "Lazy learner"],
+          "options": [
+            "Memory-based learner",
+            "Case-based learner",
+            "Lazy learner"
+          ],
           "correctOption": 2
         },
         {
           "id": 14,
           "question": "Which one of the following istrue for kNN as well as Naive Bayes classifier",
-          "options": ["Comparatively, kNN has higher variance and lower bias", "Comparatively, Naive Bayes has lower variance and higher bias", "Naive Bayes is faster than kNN classifier", 'Training dataset is necessary for both classifiers'],
+          "options": [
+            "Comparatively, kNN has higher variance and lower bias",
+            "Comparatively, Naive Bayes has lower variance and higher bias",
+            "Naive Bayes is faster than kNN classifier",
+            "Training dataset is necessary for both classifiers"
+          ],
           "correctOption": 0
         }
       ]
@@ -285,26 +417,29 @@
     {
       "id": "5",
       "aim": "Support Vector Machine Simulation",
-      "pageContent": "<h2>COURSE CONTENT</h2>
-      <center>
-      <p>In machine learning, support-vector machines are supervised learning models with associated learning algorithms that analyze data used for classification and regression analysis. Support vector machine is highly preferred by many as it produces significant accuracy with less computation power. Support Vector Machine, abbreviated as SVM can be used for both regression and classification tasks. But, it is widely used in classification objectives. The objective of the support vector machine algorithm is to find a hyperplane in an N-dimensional space(N &mdash; the number of features) that distinctly classifies the data points.</p>
-      </center>
-      <h1>&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-      <h4>References</h4>
-      <div class="ephox-summary-card" style=\"max-width: 650px;" data-ephox-embed-iri="https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47"><a class="ephox-summary-card-link-thumbnail" href=\"https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47"> <img class="ephox-summary-card-thumbnail" src="https://miro.medium.com/max/1200/1*FgHPTrzeFwHE5bbSRVrAxw.jpeg"> </a> <a class="ephox-summary-card-link" href=\"https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47"> <span class="ephox-summary-card-title">Support Vector Machine &mdash; Introduction to Machine Learning Algorithms</span> <span class="ephox-summary-card-description">SVM model from scratch</span> <span class="ephox-summary-card-author">Rohith Gandhi</span> <span class="ephox-summary-card-website">Medium</span> </a></div>
-      <h1><span style=\"font-size: 12pt;"><a href=\"https://www.youtube.com/watch?v=Y6RRHw9uN9o">SVM Explained</a></span><br><br></h1>",
+      "pageContent": "<h2>COURSE CONTENT</h2><center><p>In machine learning, support-vector machines are supervised learning models with associated learning algorithms that analyze data used for classification and regression analysis. Support vector machine is highly preferred by many as it produces significant accuracy with less computation power. Support Vector Machine, abbreviated as SVM can be used for both regression and classification tasks. But, it is widely used in classification objectives. The objective of the support vector machine algorithm is to find a hyperplane in an N-dimensional space(N &mdash; the number of features) that distinctly classifies the data points.</p></center><h1>&nbsp;&nbsp;&nbsp;&nbsp;</h1><h4>References</h4><div class=\"ephox-summary-card\" style=\"max-width: 650px;\" data-ephox-embed-iri=\"https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47\"><a class=\"ephox-summary-card-link-thumbnail\" href=\"https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47\"> <img class=\"ephox-summary-card-thumbnail\" src=\"https://miro.medium.com/max/1200/1*FgHPTrzeFwHE5bbSRVrAxw.jpeg\"> </a> <a class=\"ephox-summary-card-link\" href=\"https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47\"> <span class=\"ephox-summary-card-title\">Support Vector Machine &mdash; Introduction to Machine Learning Algorithms</span> <span class=\"ephox-summary-card-description\">SVM model from scratch</span> <span class=\"ephox-summary-card-author\">Rohith Gandhi</span> <span class=\"ephox-summary-card-website\">Medium</span> </a></div><h1><span style=\"font-size: 12pt;\"><a href=\"https://www.youtube.com/watch?v=Y6RRHw9uN9o\">SVM Explained</a></span><br><br></h1>",
       "simulation-link": "Iframe link of Simulation",
       "test": [
         {
           "id": 0,
           "question": "What does generalization error mean?",
-          "options": ["The accuracy with which SVM can predict outcomes for new, unseen data", "The distance between hyperplane and vectors", "The amount of error in the SVM"],
+          "options": [
+            "The accuracy with which SVM can predict outcomes for new, unseen data",
+            "The distance between hyperplane and vectors",
+            "The amount of error in the SVM"
+          ],
           "correctOption": 0
         },
         {
           "id": 1,
           "question": "The effectiveness of SVM depends on?",
-          "options": ["Kernel parameters", "Kernel selection", "There is no feedback of signal at nay stage", "Soft Margin Parameter", "All of the above"],
+          "options": [
+            "Kernel parameters",
+            "Kernel selection",
+            "There is no feedback of signal at nay stage",
+            "Soft Margin Parameter",
+            "All of the above"
+          ],
           "correctOption": 4
         },
         {
@@ -316,7 +451,12 @@
         {
           "id": 3,
           "question": "You are given a labeled binary classification data set with N data points and D features. Suppose that N < D. In training an SVM on this data set, which of the following kernels is likely to be most appropriate?",
-          "options": ["Linear kernel", "Quadratic kernel", "RBF Kernel", "Higher order polynomial kernel"],
+          "options": [
+            "Linear kernel",
+            "Quadratic kernel",
+            "RBF Kernel",
+            "Higher order polynomial kernel"
+          ],
           "correctOption": 0
         },
         {
@@ -328,37 +468,58 @@
         {
           "id": 5,
           "question": "Which of the following can only be used when training data are linearly separable?",
-          "options": ["Linear hard- margin SVM", "Linear logistic regression", "Linear soft margin SVM"],
+          "options": [
+            "Linear hard- margin SVM",
+            "Linear logistic regression",
+            "Linear soft margin SVM"
+          ],
           "correctOption": 0
         },
         {
           "id": 6,
           "question": "The SVM’s are less effective when:",
-          "options": ["The data is clean and ready to use", "The data is noisy and contains overlapping points", "The data is linearly separable"],
+          "options": [
+            "The data is clean and ready to use",
+            "The data is noisy and contains overlapping points",
+            "The data is linearly separable"
+          ],
           "correctOption": 1
         },
         {
           "id": 7,
           "question": "Suppose you are using RBF kernel in SVM with high Gamma value. What does this signify?",
-          "options": ["The model would consider only the points close to the hyperplane for modeling", "The model would consider all the points for modeling", "The model would consider far off points close to the hyperplane for modeling"],
+          "options": [
+            "The model would consider only the points close to the hyperplane for modeling",
+            "The model would consider all the points for modeling",
+            "The model would consider far off points close to the hyperplane for modeling"
+          ],
           "correctOption": 0
         },
         {
           "id": 8,
           "question": "The cost parameter in the SVM means",
-          "options": ["The kernel to be used", "The validations to be made", "The tradeoff between misclassification and simplicity of the model"],
-          "correctOption":2
+          "options": [
+            "The kernel to be used",
+            "The validations to be made",
+            "The tradeoff between misclassification and simplicity of the model"
+          ],
+          "correctOption": 2
         },
         {
           "id": 9,
           "question": "Taking into consideration all the features of your dataset, you achieve 100 % accuracy on 100% accuracy on the training set but 60% accuracy on validation data, what should I look for?",
           "options": ["Underfitting", "Overfitting", "The model is proper"],
-          "correctOption":1
+          "correctOption": 1
         },
         {
           "id": 10,
           "question": "Which of the following options would you more likely to consider iterating SVM next time?",
-          "options": ["To reduce the features", "To calculate more variables", "To decrease data points", "To increase data points"],
+          "options": [
+            "To reduce the features",
+            "To calculate more variables",
+            "To decrease data points",
+            "To increase data points"
+          ],
           "correctOption": 1
         },
         {
@@ -369,21 +530,28 @@
         },
         {
           "id": 12,
-          "question": "What is/are true about kernel in SVM?1. Kernel function map low dimensional data to high dimensional space
-          2. It’s a similarity function",
+          "question": "What is/are true about kernel in SVM?1. Kernel function map low dimensional data to high dimensional space2. It’s a similarity function",
           "options": ["1", "2", "Both", "None"],
           "correctOption": 2
         },
         {
           "id": 13,
           "question": "When the C parameter is set to infinite, which of the following holds true?",
-          "options": ["The optimal hyperplane if exists, will be the one that completely separates the data", "The soft-margin classifier will separate the data", "None"],
+          "options": [
+            "The optimal hyperplane if exists, will be the one that completely separates the data",
+            "The soft-margin classifier will separate the data",
+            "None"
+          ],
           "correctOption": 0
         },
         {
           "id": 14,
           "question": "What does hard margin mean in SVM?",
-          "options": ["High error in classification allowed by SVM", "Low error in classification allowed by SVM", "None"],
+          "options": [
+            "High error in classification allowed by SVM",
+            "Low error in classification allowed by SVM",
+            "None"
+          ],
           "correctOption": 1
         }
       ]
@@ -391,74 +559,84 @@
     {
       "id": "6",
       "aim": "YOLO(You only look once)",
-      "pageContent": "<div>
-      <p>YOLO is a convolutional neural network (CNN) technique for doing object detection in real-time. The algorithm applies a single neural network to the full image, and then divides the image into regions and predicts bounding boxes and probabilities for each region.</p>
-      </div>
-      <div>
-      <div>
-      <div>
-      <h3>References:</h3>
-      <ul style=\"list-style-type: square;">
-      <li><a href=\"https://pjreddie.com/darknet/yolo/" target=\"_blank" rel=\"noopener">YOLO</a></li>
-      <li><a href=\"https://medium.com/@jonathan_hui/real-time-object-detection-with-yolo-yolov2-28b1b93e2088" target=\"_blank" rel=\"noopener">Real-time Object Detection with YOLO, YOLOv2 and now YOLOv3</a></li>
-      <li><a href=\"https://www.analyticsvidhya.com/blog/2018/12/practical-guide-object-detection-yolo-framewor-python/" target=\"_blank" rel=\"noopener">A Practical Guide to Object Detection using the Popular YOLO Framework &ndash; Part III (with Python codes)</a></li>
-      </ul>
-      </div>
-      </div>
-      <div><a href=\"https://pjreddie.com/darknet/yolo/" target=\"_blank" rel=\"noopener"><img src="https://pjreddie.com/media/image/Screen_Shot_2018-03-24_at_10.48.42_PM.png" height="20%"></a></div>
-      </div>",
+      "pageContent": "<div><p>YOLO is a convolutional neural network (CNN) technique for doing object detection in real-time. The algorithm applies a single neural network to the full image, and then divides the image into regions and predicts bounding boxes and probabilities for each region.</p></div><div><div><div><h3>References:</h3><ul style=\"list-style-type: square;\"><li><a href=\"https://pjreddie.com/darknet/yolo/\" target=\"_blank\" rel=\"noopener\">YOLO</a></li><li><a href=\"https://medium.com/@jonathan_hui/real-time-object-detection-with-yolo-yolov2-28b1b93e2088\" target=\"_blank\" rel=\"noopener\">Real-time Object Detection with YOLO, YOLOv2 and now YOLOv3</a></li><li><a href=\"https://www.analyticsvidhya.com/blog/2018/12/practical-guide-object-detection-yolo-framewor-python/\" target=\"_blank\" rel=\"noopener\">A Practical Guide to Object Detection using the Popular YOLO Framework &ndash; Part III (with Python codes)</a></li></ul></div></div><div><a href=\"https://pjreddie.com/darknet/yolo/\" target=\"_blank\" rel=\"noopener\"><img src=\"https://pjreddie.com/media/image/Screen_Shot_2018-03-24_at_10.48.42_PM.png\" height=\"20%\"></a></div></div>",
       "simulation-link": "Iframe link of Simulation",
       "test": [
-        {"id":0,"question":" What is the full form of YOLO ?","options":["You Once Look Only","You Only Look Once","You Only Live Once"],"correctOption":1},{"id":1,"question":"YOLO Algorithm is based on ?","options":["Regression","Classification"],"correctOption":0},{"id":2,"question":"YOLO is an example of which stage detector ?","options":["Single","Two","Three"],"correctOption":0},{"id":3,"question":"YOLO has ___ convolutional layers whereas Fast YOLO has ____ convolutional layers.        ","options":["20,10","24,9","10,20","9,24"],"correctOption":1},{"id":4,"question":"YOLO looks at the image","options":["Once","Breaks down the image into parts"],"correctOption":0},{"id":5,"question":"What does non max suppression do ?","options":["Removes boxes with high overlapping","Adds more boxes"],"correctOption":0}
+        {
+          "id": 0,
+          "question": " What is the full form of YOLO ?",
+          "options": [
+            "You Once Look Only",
+            "You Only Look Once",
+            "You Only Live Once"
+          ],
+          "correctOption": 1
+        },
+        {
+          "id": 1,
+          "question": "YOLO Algorithm is based on ?",
+          "options": ["Regression", "Classification"],
+          "correctOption": 0
+        },
+        {
+          "id": 2,
+          "question": "YOLO is an example of which stage detector ?",
+          "options": ["Single", "Two", "Three"],
+          "correctOption": 0
+        },
+        {
+          "id": 3,
+          "question": "YOLO has ___ convolutional layers whereas Fast YOLO has ____ convolutional layers.        ",
+          "options": ["20,10", "24,9", "10,20", "9,24"],
+          "correctOption": 1
+        },
+        {
+          "id": 4,
+          "question": "YOLO looks at the image",
+          "options": ["Once", "Breaks down the image into parts"],
+          "correctOption": 0
+        },
+        {
+          "id": 5,
+          "question": "What does non max suppression do ?",
+          "options": ["Removes boxes with high overlapping", "Adds more boxes"],
+          "correctOption": 0
+        }
       ]
     },
     {
       "id": "7",
       "aim": "Posenet",
-      "pageContent": "<div>
-      <h2>COURSE CONTENT</h2>
-      </div>
-      <div>
-      <div>
-      <div>
-      <div>
-      <div>Posenet</div>
-      </div>
-      </div>
-      <div>
-      <p>PoseNet is a vision model that can be used to estimate the pose of a person in an image or video by estimating where key body joints are.</p>
-      </div>
-      <div>
-      <div>
-      <div>
-      <h3>References:</h3>
-      <ul style=\"list-style-type: square;">
-      <li><a href=\"https://www.tensorflow.org/lite/models/pose_estimation/overview" target=\"_blank" rel=\"noopener" aria-invalid="true">pose_estimation_overview</a></li>
-      <li><a href=\"https://medium.com/tensorflow/real-time-human-pose-estimation-in-the-browser-with-tensorflow-js-7dd0bc881cd5" target=\"_blank" rel=\"noopener">Real-time Human Pose Estimation in the Browser with TensorFlow.js</a></li>
-      </ul>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>",
+      "pageContent": "<div><h2>COURSE CONTENT</h2></div><div><div><div><div><div>Posenet</div></div></div><div><p>PoseNet is a vision model that can be used to estimate the pose of a person in an image or video by estimating where key body joints are.</p></div><div><div><div><h3>References:</h3><ul style=\"list-style-type: square;\"><li><a href=\"https://www.tensorflow.org/lite/models/pose_estimation/overview\" target=\"_blank\" rel=\"noopener\" aria-invalid=\"true\">pose_estimation_overview</a></li><li><a href=\"https://medium.com/tensorflow/real-time-human-pose-estimation-in-the-browser-with-tensorflow-js-7dd0bc881cd5\" target=\"_blank\" rel=\"noopener\">Real-time Human Pose Estimation in the Browser with TensorFlow.js</a></li></ul></div></div></div></div></div>",
       "simulation-link": "Iframe link of Simulation",
       "test": [
         {
           "id": 0,
           "question": "What is Posenet?",
-          "options": ["It is a vision model that can be used to estimate the pose of a person in an image or video by estimating where key body joints are.", "It is a vision model that can be used to estimate the pose of a person in an image or video by estimating where key body parts are.",],
+          "options": [
+            "It is a vision model that can be used to estimate the pose of a person in an image or video by estimating where key body joints are.",
+            "It is a vision model that can be used to estimate the pose of a person in an image or video by estimating where key body parts are."
+          ],
           "correctOption": 0
         },
         {
           "id": 1,
           "question": "What is Pose Estimation?",
-          "options": ["It recognizes who is in the image or video", "It recognizes where the key body joints are in the image or video", "It detects only the human figures in the image or video"],
+          "options": [
+            "It recognizes who is in the image or video",
+            "It recognizes where the key body joints are in the image or video",
+            "It detects only the human figures in the image or video"
+          ],
           "correctOption": 1
         },
         {
           "id": 2,
           "question": "Performance of the model varies according to-",
-          "options": ["The Device", "The Output Stride(heatmaps and offset vectors)", "Both"],
+          "options": [
+            "The Device",
+            "The Output Stride(heatmaps and offset vectors)",
+            "Both"
+          ],
           "correctOption": 2
         },
         {
@@ -470,13 +648,16 @@
         {
           "id": 4,
           "question": "PoseNet can be configured to have a higher accuracy at the expense of performance.",
-          "options": ["True","False"],
+          "options": ["True", "False"],
           "correctOption": 0
         },
         {
           "id": 5,
           "question": "What is the output stride?",
-          "options": ["The output stride determines how much we’re scaling down the output relative to the input image size","The output stride determines how much we’re scaling up the output relative to the input image size"],
+          "options": [
+            "The output stride determines how much we’re scaling down the output relative to the input image size",
+            "The output stride determines how much we’re scaling up the output relative to the input image size"
+          ],
           "correctOption": 0
         }
       ]
@@ -484,44 +665,17 @@
     {
       "id": "8",
       "aim": "OCR(Optical Character Recognition)",
-      "pageContent": "<div>
-      <h2>COURSE CONTENT</h2>
-      </div>
-      <div>
-      <div>
-      <div>
-      <div>OCR</div>
-      <div>Optical Character Recognition</div>
-      </div>
-      </div>
-      <div>
-      <p>Optical character recognition, or OCR, is a process which allows us to convert text based images into editable electronic documents. These images can be produced by scanners, cameras, read only files, etc. The images can include documents, invoices, legal forms, ID cards or OCR in the wild like reading street signs, shipping container numbers or vehicle number plates.</p>
-      </div>
-      <div>
-      <div>Tesseract</div>
-      </div>
-      <div>
-      <p>Tesseract is a general purpose OCR engine, but it works best when we have clean black text on solid white background in a common font. It also works well when the text is approximately horizontal and the text height is at least 20 pixels. If the text has a surrounding border, it may be detected as some random text.</p>
-      </div>
-      <div>
-      <div>
-      <div>
-      <h3>References:</h3>
-      <ul style=\"list-style-type: square;">
-      <li><a href=\"https://www.youtube.com/watch?v=cAkklvGE5io" target=\"_blank" rel=\"noopener">Optical Character Recognition &mdash; Simply Explained</a></li>
-      <li><a href=\"https://towardsdatascience.com/a-gentle-introduction-to-ocr-ee1469a201aa" target=\"_blank" rel=\"noopener">OCR implementation In Python</a></li>
-      <li><a href=\"https://nanonets.com/blog/ocr-with-tesseract/" target=\"_blank" rel=\"noopener">Tessaeract : A Simple Explanation</a></li>
-      </ul>
-      </div>
-      </div>
-      </div>
-      </div>",
+      "pageContent": "<div > <h2 > COURSE CONTENT < /h2 > </div > <div > <div > <div > <div > OCR < /div > <div > Optical Character Recognition < /div > </div > </div > <div > <p > Optical character recognition, or OCR, is a process which allows us to convert text based images into editable electronic documents. These images can be produced by scanners, cameras, read only files, etc. The images can include documents, invoices, legal forms, ID cards or OCR in the wild like reading street signs, shipping container numbers or vehicle number plates. < /p > </div > <div > <div > Tesseract < /div > </div > <div > <p > Tesseract is a general purpose OCR engine, but it works best when we have clean black text on solid white background in a common font. It also works well when the text is approximately horizontal and the text height is at least 20 pixels. If the text has a surrounding border, it may be detected as some random text. < /p > </div > <div > <div > <div > <h3 > References: < /h3 > <ul style =\"list-style-type: square\"> < li > <a href =\"https: // www.youtube.com/watch?v = cAkklvGE5io\" target =\"_blank\" rel =\"noopener\"> Optical Character Recognition & mdashSimply Explained < /a > </li > <li > <a href =\"https: // towardsdatascience.com/a-gentle-introduction-to-ocr-ee1469a201aa\" target =\"_blank\" rel =\"noopener\"> OCR implementation In Python < /a > </li > <li > <a href =\"https: // nanonets.com/blog/ocr-with-tesseract /\" target =\"_blank\" rel =\"noopener\"> Tessaeract: A Simple Explanation < /a > </li > </ul > </div > </div > </div > </div >",
       "simulation-link": "Iframe link of Simulation",
       "test": [
         {
           "id": 0,
           "question": "What is the most appropriate objective of OCR",
-          "options": ["To convert text based images into symbols","To convert images into text","To convert text based images into text"],
+          "options": [
+            "To convert text based images into symbols",
+            "To convert images into text",
+            "To convert text based images into text"
+          ],
           "correctOption": 2
         },
         {
@@ -533,7 +687,12 @@
         {
           "id": 2,
           "question": "How can OCR algorithm detect the character using features detection approach?",
-          "options": ["By identifying the characters as whole", "By Comparing letters with the dataset", "By identifying lines and strokes", "None of the mentioned"],
+          "options": [
+            "By identifying the characters as whole",
+            "By Comparing letters with the dataset",
+            "By identifying lines and strokes",
+            "None of the mentioned"
+          ],
           "correctOption": 2
         },
         {
@@ -545,19 +704,29 @@
         {
           "id": 4,
           "question": "How can OCR algorithm detect the character using pattern recognition approach?",
-          "options": ["By Comparing letters with the dataset","By identifying the characters as whole", , "By identifying lines and strokes", "None of the mentioned"],
+          "options": [
+            "By Comparing letters with the dataset",
+            "By identifying the characters as whole",
+            "By identifying lines and strokes",
+            "None of the mentioned"
+          ],
           "correctOption": 1
         },
         {
           "id": 5,
           "question": "Which of the following is not the application of OCR ?",
-          "options": ["License plates detection", "street signs detection", "CAPTCHA detection", "Password detection"],
+          "options": [
+            "License plates detection",
+            "street signs detection",
+            "CAPTCHA detection",
+            "Password detection"
+          ],
           "correctOption": 3
         },
         {
           "id": 6,
           "question": "Which of the following is not the deep learning approaches of OCR ?",
-          "options": ["SEE","WEST", "CRNN", "EAST"],
+          "options": ["SEE", "WEST", "CRNN", "EAST"],
           "correctOption": 1
         },
         {
@@ -569,7 +738,12 @@
         {
           "id": 8,
           "question": "Which of the following process is not involved in Tesseract tool ?",
-          "options": ["Line finding","Paragraph finding", "Word finding", "Character classification"],
+          "options": [
+            "Line finding",
+            "Paragraph finding",
+            "Word finding",
+            "Character classification"
+          ],
           "correctOption": 1
         },
         {
@@ -583,9 +757,7 @@
     {
       "id": "9",
       "aim": "InceptionResnet",
-      "pageContent": "<h2>ABOUT THE COURSE</h2>
-      <p><br><br></p>
-      <div>Inception-ResNet-v2 is a convolutional neural network that is trained on more than a million images from the ImageNet database [1]. The network is 164 layers deep and can classify images into 1000 object categories, such as keyboard, mouse, pencil, and many animals. As a result, the network has learned rich feature representations for a wide range of images. The network has an image input size of 299-by-299. For more pretrained networks in MATLAB&reg;, see Pretrained Deep Neural Networks. You can use classify to classify new images using the Inception-ResNet-v2 network. Follow the steps of Classify Image Using GoogLeNet and replace GoogLeNet with Inception-ResNet-v2. To retrain the network on a new classification task, follow the steps of Train Deep Learning Network to Classify New Images and load Inception-ResNet-v2 instead of GoogLeNet.</div>",
+      "pageContent": "<h2>ABOUT THE COURSE</h2><p><br><br></p><div>Inception-ResNet-v2 is a convolutional neural network that is trained on more than a million images from the ImageNet database [1]. The network is 164 layers deep and can classify images into 1000 object categories, such as keyboard, mouse, pencil, and many animals. As a result, the network has learned rich feature representations for a wide range of images. The network has an image input size of 299-by-299. For more pretrained networks in MATLAB&reg;, see Pretrained Deep Neural Networks. You can use classify to classify new images using the Inception-ResNet-v2 network. Follow the steps of Classify Image Using GoogLeNet and replace GoogLeNet with Inception-ResNet-v2. To retrain the network on a new classification task, follow the steps of Train Deep Learning Network to Classify New Images and load Inception-ResNet-v2 instead of GoogLeNet.</div>",
       "simulation-link": "Iframe link of Simulation",
       "test": [
         {
@@ -603,7 +775,12 @@
         {
           "id": 2,
           "question": "Which pooling mode is used?",
-          "options": ["Max pooling", "Average pooling", "Any", "None of the mentioned"],
+          "options": [
+            "Max pooling",
+            "Average pooling",
+            "Any",
+            "None of the mentioned"
+          ],
           "correctOption": 2
         },
         {
@@ -615,7 +792,12 @@
         {
           "id": 4,
           "question": "Why are residual blocks added to the inception network?",
-          "options": ["Increase the depth", "To improve the learning rate", "Inception model gave very bad results", "All of the mentioned"],
+          "options": [
+            "Increase the depth",
+            "To improve the learning rate",
+            "Inception model gave very bad results",
+            "All of the mentioned"
+          ],
           "correctOption": 0
         },
         {
@@ -635,40 +817,17 @@
     {
       "id": "10",
       "aim": "Regression",
-      "pageContent": "<h1>Overview</h1>
-      <h2>Linear regression analysis is used to predict the value of a variable based on the value of another variable. The variable you want to predict is called the dependent variable. The variable you are using to predict the other variable's value is called the independent variable. This form of analysis estimates the coefficients of the linear equation, involving one or more independent variables that best predict the value of the dependent variable. Linear regression fits a straight line or surface that minimizes the discrepancies between predicted and actual output values. There are simple linear regression calculators that use a &ldquo;least squares&rdquo; method to discover the best-fit line for a set of paired data. You then estimate the value of X (dependent variable) from Y (independent variable).<br><br></h2>
-      <h1>Cost Function</h1>
-      <p>The cost function of the linear regression is</p>
-      <h2><img src="https://miro.medium.com/max/518/1*Ufonqa20VceIYU0i2UfMnQ.png"></h2>
-      <p>To make it simpler for our understanding, let's rewrite it as</p>
-      <h2><img src="https://miro.medium.com/max/640/1*mDEzcRicu3Oc2rrvB7A-uw.png"></h2>
-      <p>Here m means the total number of examples in your dataset. In our example, m will be the total number of houses in our dataset.</p>
-      <h2><br><br></h2>
-      <h1>Performance of Regression</h1>
-      <p>1. Mean Absolute Error (MAE)</p>
-      <p>By using MAE, we calculate the average absolute difference between the actual values and the predicted values.</p>
-      <p>2. Mean Absolute Percentage Error (MAPE)</p>
-      <p>It is the average of the ratio of the absolute difference between actual &amp; predicted values and actual values.</p>
-      <p>3. Root Mean Square Error (RMSE)</p>
-      <p>RMSE calculates the square root average of the sum of the squared difference between the actual and the predicted values.</p>
-      <p>4. R-squared values</p>
-      <p>RMSE calculates the square root average of the sum of the squared difference between the actual and the predicted values.</p>
-      <h1>References</h1>
-      <h2>Basics of Linear Regression:</h2>
-      <p><a href=\"https://www.ibm.com/in-en/topics/linear-regression">linear-regression</a></p>
-      <h2>Research Paper for Multi-Linear Regression:</h2>
-      <p><a href=\"https://www.scirp.org/journal/paperinformation.aspx?paperid=115003">Linear Regression Paper</a></p>",
+      "pageContent": "<h1>Overview</h1><h2>Linear regression analysis is used to predict the value of a variable based on the value of another variable. The variable you want to predict is called the dependent variable. The variable you are using to predict the other variable\"s value is called the independent variable. This form of analysis estimates the coefficients of the linear equation, involving one or more independent variables that best predict the value of the dependent variable. Linear regression fits a straight line or surface that minimizes the discrepancies between predicted and actual output values. There are simple linear regression calculators that use a &ldquo;least squares&rdquo; method to discover the best-fit line for a set of paired data. You then estimate the value of X (dependent variable) from Y (independent variable).<br><br></h2><h1>Cost Function</h1><p>The cost function of the linear regression is</p><h2><img src=\"https://miro.medium.com/max/518/1*Ufonqa20VceIYU0i2UfMnQ.png\"></h2><p>To make it simpler for our understanding, let\"s rewrite it as</p><h2><img src=\"https://miro.medium.com/max/640/1*mDEzcRicu3Oc2rrvB7A-uw.png\"></h2><p>Here m means the total number of examples in your dataset. In our example, m will be the total number of houses in our dataset.</p><h2><br><br></h2><h1>Performance of Regression</h1><p>1. Mean Absolute Error (MAE)</p><p>By using MAE, we calculate the average absolute difference between the actual values and the predicted values.</p><p>2. Mean Absolute Percentage Error (MAPE)</p><p>It is the average of the ratio of the absolute difference between actual &amp; predicted values and actual values.</p><p>3. Root Mean Square Error (RMSE)</p><p>RMSE calculates the square root average of the sum of the squared difference between the actual and the predicted values.</p><p>4. R-squared values</p><p>RMSE calculates the square root average of the sum of the squared difference between the actual and the predicted values.</p><h1>References</h1><h2>Basics of Linear Regression:</h2><p><a href=\"https://www.ibm.com/in-en/topics/linear-regression\">linear-regression</a></p><h2>Research Paper for Multi-Linear Regression:</h2><p><a href=\"https://www.scirp.org/journal/paperinformation.aspx?paperid=115003\">Linear Regression Paper</a></p>",
       "simulation-link": "Iframe link of Simulation",
       "test": [
         {
           "id": 0,
           "question": "Regression analysis is inappropriate when; ",
           "options": [
-            "you have two variables that are measured on an interval or ratio scale.  
-          ",
+            "you have two variables that are measured on an interval or ratio scale.",
             "you want to make predictions for one variable based on information about another variable.",
             "the pattern of data points forms a reasonably straight line.",
-            "there is heteroscedasticity in the scatter plot. ",
+            "there is heteroscedasticity in the scatter plot. "
           ],
           "correctOption": 3
         },
@@ -679,35 +838,36 @@
             "the independent variable",
             "the dependent variable",
             "usually denoted by x ",
-            "usually denoted by r",
+            "usually denoted by r"
           ],
           "correctOption": 1
         },
         {
           "id": 2,
-          "question": "Which of the following metrics can be used for evaluating regression models?
-          i) R Squared
-          ii) Adjusted R Squared
-          iii) F Statistics
-          iv) RMSE / MSE / MAE",
+          "question": "Which of the following metrics can be used for evaluating regression models?i) R Squaredii) Adjusted R Squarediii) F Statisticsiv) RMSE / MSE / MAE",
           "options": [
             "ii and iv",
             "i and ii",
             "ii, iii and iv",
-            "i, ii, iii and iv",
+            "i, ii, iii and iv"
           ],
           "correctOption": 3
+        },
         {
           "id": 3,
-          "question": "In a simple linear regression model (One independent variable), If we change the input variable by 1 unit. How much output variable will change?
-          ",
+          "question": "In a simple linear regression model (One independent variable), If we change the input variable by 1 unit. How much output variable will change?",
           "options": ["by 1", "no change", "by intercept", "by its slope"],
           "correctOption": 3
         },
         {
           "id": 4,
           "question": "The least square method calculates the best-fitting line for the observed data by minimizing the sum of the squares of the _______ deviations",
-          "options": ["Vertical", "Horizontal", "Both of these", "None of these"],
+          "options": [
+            "Vertical",
+            "Horizontal",
+            "Both of these",
+            "None of these"
+          ],
           "correctOption": 0
         },
         {
@@ -716,7 +876,7 @@
           "options": ["True", "False"],
           "correctOption": 1
         },
-  
+
         {
           "id": 6,
           "question": "In practice, the Line of best fit or regression line is found when _____________",
@@ -724,11 +884,11 @@
             "Sum of residuals (∑(Y-h(X))) is minimum",
             "Sum of the absolute value of residuals (∑|Y-h(X)|) is maximum",
             "Sum of the square of residuals ( ∑ (Y-h(X))2) is minimum",
-            "Sum of the square of residuals ( ∑ (Y-h(X))2) is maximum",
+            "Sum of the square of residuals ( ∑ (Y-h(X))2) is maximum"
           ],
           "correctOption": 2
         },
-  
+
         {
           "id": 7,
           "question": "Multiple linear regression (MLR) is a __________ type of statistical analysis.",
@@ -740,103 +900,102 @@
     {
       "id": "11",
       "aim": "Logistic Regression",
-      "pageContent": "<div>
-      <div>
-      <div>Logistic Regression</div>
-      </div>
-      </div>
-      <div>
-      <p>Logistic regression is a transformation of the linear regression model that allows us to probabilistically model binary variables. It is also known as a generalized linear model that uses a logit-link. Logistic regression is basically a supervised classification algorithm. In a classification problem, the target variable(or output), y, can take only discrete values for a given set of features(or inputs), X.<br>Logistic regression becomes a classification technique only when a decision threshold is brought into the picture. The setting of the threshold value is a very important aspect of Logistic regression and is dependent on the classification problem itself. The decision for the value of the threshold value is majorly affected by the values of precision and recall. Ideally, we want both precision and recall to be 1, but this seldom is the case.<strong>Assumptions for Logistic Regression:</strong><br>1. The dependent variable must be categorical in nature.<br>2. The independent variable should not have multi-collinearity.<br><br><strong>Logistic Regression Equation:</strong><br>The Logistic regression equation can be obtained from the Linear Regression equation. The mathematical steps to get Logistic Regression equations are given below<br>We know the equation of the straight line can be written as:<br>y = bo + b1x1 + b2x2 + b3x3 + ... +bnxn<br>In Logistic Regression y can be between 0 and 1 only, so for this let's divide the above equation by (1-y):<br>y / (1-y); 0 for y=0 and infinity for y=1;<br>The above equation is the final equation for Logistic Regression.<br><br>Steps in Logistic Regression: To implement the Logistic Regression using Python, we will use the same steps as we have done in previous topics of Regression. Below are the steps:<br>1. Data Pre-processing step 2. Fitting Logistic Regression to the Training set 3. Predicting the test result 4. Test accuracy of the result(Creation of Confusion matrix) 5. Visualizing the test set result.</p>
-      </div>
-      <div>
-      <div>
-      <div>
-      <h3>References:</h3>
-      <ul style=\"list-style-type: square;">
-      <li><a href=\"https://www.javatpoint.com/logistic-regression-in-machine-learning" target=\"_blank" rel=\"noopener">Logistic Regression in Machine Learning</a></li>
-      <li><a href=\"https://towardsdatascience.com/the-data-scientists-field-guide-to-logistic-regression-part-1-intuition-97084b11bd68" target=\"_blank" rel=\"noopener">Logistic regression theory for practitioners</a></li>
-      </ul>
-      </div>
-      </div>
-      <br><br><br></div>
-      <p>&nbsp;</p>",
+      "pageContent": "<div><div><div>Logistic Regression</div></div></div><div><p>Logistic regression is a transformation of the linear regression model that allows us to probabilistically model binary variables. It is also known as a generalized linear model that uses a logit-link. Logistic regression is basically a supervised classification algorithm. In a classification problem, the target variable(or output), y, can take only discrete values for a given set of features(or inputs), X.<br>Logistic regression becomes a classification technique only when a decision threshold is brought into the picture. The setting of the threshold value is a very important aspect of Logistic regression and is dependent on the classification problem itself. The decision for the value of the threshold value is majorly affected by the values of precision and recall. Ideally, we want both precision and recall to be 1, but this seldom is the case.<strong>Assumptions for Logistic Regression:</strong><br>1. The dependent variable must be categorical in nature.<br>2. The independent variable should not have multi-collinearity.<br><br><strong>Logistic Regression Equation:</strong><br>The Logistic regression equation can be obtained from the Linear Regression equation. The mathematical steps to get Logistic Regression equations are given below<br>We know the equation of the straight line can be written as:<br>y = bo + b1x1 + b2x2 + b3x3 + ... +bnxn<br>In Logistic Regression y can be between 0 and 1 only, so for this let's divide the above equation by (1-y):<br>y / (1-y); 0 for y=0 and infinity for y=1;<br>The above equation is the final equation for Logistic Regression.<br><br>Steps in Logistic Regression: To implement the Logistic Regression using Python, we will use the same steps as we have done in previous topics of Regression. Below are the steps:<br>1. Data Pre-processing step 2. Fitting Logistic Regression to the Training set 3. Predicting the test result 4. Test accuracy of the result(Creation of Confusion matrix) 5. Visualizing the test set result.</p></div><div><div><div><h3>References:</h3><ul style=\"list-style-type: square;\"><li><a href=\"https://www.javatpoint.com/logistic-regression-in-machine-learning\" target=\"_blank\" rel=\"noopener\">Logistic Regression in Machine Learning</a></li><li><a href=\"https://towardsdatascience.com/the-data-scientists-field-guide-to-logistic-regression-part-1-intuition-97084b11bd68\" target=\"_blank\" rel=\"noopener\">Logistic regression theory for practitioners</a></li></ul></div></div><br><br><br></div><p>&nbsp;</p>",
       "simulation-link": "Iframe link of Simulation",
       "test": [
         {
           "id": 0,
-          "question": 'Logistic regression is used for ___?',
-          "options": ['Classification','Regression','Clustering','All of these',                ],
+          "question": "Logistic regression is used for ___?",
+          "options": [
+            "Classification",
+            "Regression",
+            "Clustering",
+            "All of these"
+          ],
           "correctOption": 0
         },
         {
           "id": 1,
           "question": "Logistic regression assumes a: ",
-          "options": ['Linear relationship between continuous predictor variables and the outcome variable.',
-          'Linear relationship between continuous predictor variables and the logit of the outcome variable.',
-          'Linear relationship between continuous predictor variables.',
-          'Linear relationship between observations.'],
+          "options": [
+            "Linear relationship between continuous predictor variables and the outcome variable.",
+            "Linear relationship between continuous predictor variables and the logit of the outcome variable.",
+            "Linear relationship between continuous predictor variables.",
+            "Linear relationship between observations."
+          ],
           "correctOption": 0
         },
         {
           "id": 2,
-          "question": 'Logistic regression is used when you want to:',
-          "options": ['Predict a dichotomous variable from continuous or dichotomous variables.',
-                    'Predict a continuous variable from dichotomous variables.',
-                    'Predict any categorical variable from several other categorical variables.',
-                    'Predict a continuous variable from dichotomous or continuous variables.'
-                  ],
+          "question": "Logistic regression is used when you want to:",
+          "options": [
+            "Predict a dichotomous variable from continuous or dichotomous variables.",
+            "Predict a continuous variable from dichotomous variables.",
+            "Predict any categorical variable from several other categorical variables.",
+            "Predict a continuous variable from dichotomous or continuous variables."
+          ],
           "correctOption": 0
         },
         {
           "id": 3,
-          "question": 'What is the cost function of the logistic regression?'
-          ,
-              "options": ['Sigmoid function','Logistic Function','both (A) and (B)','none of these'],
-              "correctOption": 2
+          "question": "What is the cost function of the logistic regression?",
+          "options": [
+            "Sigmoid function",
+            "Logistic Function",
+            "both (A) and (B)",
+            "none of these"
+          ],
+          "correctOption": 2
         },
         {
           "id": 4,
-          "question": 'What is the the hypothesis of logistic regression?',
-          "options": ['to limit the cost function between 0 and 1',
-          'to limit the cost function between -1 and 1',
-          'to limit the cost function between -infinity and +infinity',
-          'to limit the cost function between 0 and +infinity'],
+          "question": "What is the the hypothesis of logistic regression?",
+          "options": [
+            "to limit the cost function between 0 and 1",
+            "to limit the cost function between -1 and 1",
+            "to limit the cost function between -infinity and +infinity",
+            "to limit the cost function between 0 and +infinity"
+          ],
           "correctOption": 0
         },
         {
           "id": 5,
-          "question": 'Why cost function which has been used for linear regression can’t be used for logistic regression?',
-          "options": ['Linear regression uses mean squared error as its cost function. If this is used for logistic regression, then it will be a non-convex function of its parameters. Gradient descent will converge into global minimum only if the function is convex.',
-          'Linear regression uses mean squared error as its cost function. If this is used for logistic regression, then it will be a convex function of its parameters. Gradient descent will converge into global minimum only if the function is convex.',
-          'Linear regression uses mean squared error as its cost function. If this is used for logistic regression, then it will be a non-convex function of its parameters. Gradient descent will converge into global minimum only if the function is non-convex.',
-          'Linear regression uses mean squared error as its cost function. If this is used for logistic regression, then it will be a convex function of its parameters. Gradient descent will converge into global minimum only if the function is non-convex.'],
+          "question": "Why cost function which has been used for linear regression can’t be used for logistic regression?",
+          "options": [
+            "Linear regression uses mean squared error as its cost function. If this is used for logistic regression, then it will be a non-convex function of its parameters. Gradient descent will converge into global minimum only if the function is convex.",
+            "Linear regression uses mean squared error as its cost function. If this is used for logistic regression, then it will be a convex function of its parameters. Gradient descent will converge into global minimum only if the function is convex.",
+            "Linear regression uses mean squared error as its cost function. If this is used for logistic regression, then it will be a non-convex function of its parameters. Gradient descent will converge into global minimum only if the function is non-convex.",
+            "Linear regression uses mean squared error as its cost function. If this is used for logistic regression, then it will be a convex function of its parameters. Gradient descent will converge into global minimum only if the function is non-convex."
+          ],
           "correctOption": 1
         },
         {
           "id": 6,
-          "question": 'Is Logistic regression mainly used for Regression?',
-          "options": ['True','False'],
+          "question": "Is Logistic regression mainly used for Regression?",
+          "options": ["True", "False"],
           "correctOption": 1
         },
         {
           "id": 7,
           "question": "Is it possible to design a logistic regression algorithm using a Neural Network Algorithm?",
-          "options": ['True','False'],
+          "options": ["True", "False"],
           "correctOption": 0
         },
         {
           "id": 8,
-          "question": 'How many different types of Logistic Regression?',
-          "options": ['2','3','4','5'],
+          "question": "How many different types of Logistic Regression?",
+          "options": ["2", "3", "4", "5"],
           "correctOption": 1
         },
         {
           "id": 9,
           "question": "Which of the following are advantages of the logistic regression?",
-          "options": ['Logistic Regression is very easy to understand',
-          'It requires less training',
-          'It performs well for simple datasets as well as when the data set is linearly separable',
-          "All of the above"],
+          "options": [
+            "Logistic Regression is very easy to understand",
+            "It requires less training",
+            "It performs well for simple datasets as well as when the data set is linearly separable",
+            "All of the above"
+          ],
           "correctOption": 3
         }
       ]
@@ -844,39 +1003,17 @@
     {
       "id": "12",
       "aim": "Random Forest",
-      "pageContent": "<div>
-      <h2>COURSE CONTENT</h2>
-      </div>
-      <div>
-      <h2>Wine testing: Random forest</h2>
-      <h3>Concept:</h3>
-      <p>Data visualisation is crucial in the domains of data analysis and machine learning because it enables you to see the patterns that are buried in the data. Model interpretation is made possible by model visualisation. With so many Python packages readily available now, the visualisation process is now simple.</p>
-      <p>&nbsp;</p>
-      <p>The more popular models for supervised learning (classification and suppression) tasks are tree-based models like Decision Trees, Random Forests, and XGBoost. This is due to the fact that those models fit non-linear data, which are routinely employed in practical applications, quite well.</p>
-      <p>The Decision Tree serves as the foundational paradigm for all tree-based models. Decision trees are used in Random Forests in variations. Here, we'll talk about four alternative ways to see each decision tree in a random forest. Please keep in mind that the techniques covered here can be used to analyze any tree-based model, not just Random Forests. With just a few lines of code, the Python tools sklearn, graphviz, and dtreeviz make it simple to construct visualizations.</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p><img src="https://github.com/BassCoder2808/AIDL-Images/raw/main/RandomForest/aboutRandomForest.aae6b09b.jpg" width="534" height="283"></p>
-      <p>Credits: IBM</p>
-      <p>&nbsp;</p>
-      <h3>Applications of Random forest:</h3>
-      <p><strong>Finance domain:&nbsp;</strong>This method is&nbsp;favored over others since it takes less time to manage and per-process data. It can be used to assess high-risk consumers for fraud and issues with option pricing.</p>
-      <p>In the</p>
-      <p>&nbsp;</p>
-      <p><strong>Healthcare domain:&nbsp;</strong>The random forest approach is used in computational biology to solve issues including classifying gene expression, finding biomarkers, and annotating sequences. Doctors can therefore estimate pharmacological reactions to certain drugs.</p>
-      </div>
-      <p>&nbsp;</p>",
+      "pageContent": "<div><h2>COURSE CONTENT</h2></div><div><h2>Wine testing: Random forest</h2><h3>Concept:</h3><p>Data visualisation is crucial in the domains of data analysis and machine learning because it enables you to see the patterns that are buried in the data. Model interpretation is made possible by model visualisation. With so many Python packages readily available now, the visualisation process is now simple.</p><p>&nbsp;</p><p>The more popular models for supervised learning (classification and suppression) tasks are tree-based models like Decision Trees, Random Forests, and XGBoost. This is due to the fact that those models fit non-linear data, which are routinely employed in practical applications, quite well.</p><p>The Decision Tree serves as the foundational paradigm for all tree-based models. Decision trees are used in Random Forests in variations. Here, we'll talk about four alternative ways to see each decision tree in a random forest. Please keep in mind that the techniques covered here can be used to analyze any tree-based model, not just Random Forests. With just a few lines of code, the Python tools sklearn, graphviz, and dtreeviz make it simple to construct visualizations.</p><p>&nbsp;</p><p>&nbsp;</p><p><img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/RandomForest/aboutRandomForest.aae6b09b.jpg\" width=\"534\" height=\"283\"></p><p>Credits: IBM</p><p>&nbsp;</p><h3>Applications of Random forest:</h3><p><strong>Finance domain:&nbsp;</strong>This method is&nbsp;favored over others since it takes less time to manage and per-process data. It can be used to assess high-risk consumers for fraud and issues with option pricing.</p><p>In the</p><p>&nbsp;</p><p><strong>Healthcare domain:&nbsp;</strong>The random forest approach is used in computational biology to solve issues including classifying gene expression, finding biomarkers, and annotating sequences. Doctors can therefore estimate pharmacological reactions to certain drugs.</p></div><p>&nbsp;</p>",
       "simulation-link": "Iframe link of Simulation",
       "test": [
         {
           "id": 0,
-          "question":
-            "What is the n_estimators parameter used to define in the Random Forest algorithm ?",
+          "question": "What is the n_estimators parameter used to define in the Random Forest algorithm ?",
           "options": [
             "Find number of trees",
             "Find number of independent features",
             "Find the index of first node in the tree",
-            "None of the Above",
+            "None of the Above"
           ],
           "correctOption": 0
         },
@@ -887,26 +1024,24 @@
             "Featurenames, treenames",
             "Classnames, indexnames",
             "Featurenames, Classnames",
-            "All of the Above",
+            "All of the Above"
           ],
           "correctOption": 2
         },
         {
           "id": 2,
-          "question":
-            "In which Python library are the functions for random forest algorithms found?",
+          "question": "In which Python library are the functions for random forest algorithms found?",
           "options": ["Pandas", "Keras", "Scikit-learn"],
-          "correctOption":2
+          "correctOption": 2
         },
         {
           "id": 3,
-          "question":
-            "How are individual trees accessed in a random forest algorithm?",
+          "question": "How are individual trees accessed in a random forest algorithm?",
           "options": [
             "By using arrays",
             "By using index variable from rf_estimators",
             "By using max_depth variable in plot_tree function",
-            "none of these",
+            "none of these"
           ],
           "correctOption": 1
         },
@@ -917,7 +1052,7 @@
             "A decision tree combines some decisions, whereas a random forest combines several decision trees",
             "A random forest plots random decision trees whereas a decision tree plots only one structured decision tree",
             "A random forest plots decision trees together whereas a decision tree is a single output",
-            "All of the above",
+            "All of the above"
           ],
           "correctOption": 0
         }
@@ -926,56 +1061,7 @@
     {
       "id": "13",
       "aim": "AutoEncoders",
-      "pageContent": "<div>
-      <h2>COURSE CONTENT</h2>
-      </div>
-      <div>
-      <div>
-      <h2><strong>Auto Encoders</strong></h2>
-      <p>An autoencoder is a type of deep learning algorithm which is made to take in information and change it into a different representation. They are crucial in the creation of images. In the area of unsupervised machine learning, autoencoders are highly helpful. They can be used to lower the dimensions of the data and compress it.</p>
-      <p>&nbsp;</p>
-      <p>Autoencoders and Principle Component Analysis (PCA) vary primarily from each other in regards that while PCA identifies the directions along which data can be projected with the least amount of variation, Autoencoders rebuild our original input from a compressed version of it. This can be understood from the diagram below.</p>
-      <p>&nbsp;</p>
-      <p><img src="https://github.com/BassCoder2808/AIDL-Images/raw/main/AutoEncoder/aboutAutoEncoder.f4eb8e9e.png" width="600" height="300"></p>
-      <p>&nbsp;</p>
-      <p>An autoencoder can be used to recreate the original data from the compressed data if someone requires it.</p>
-      <p>&nbsp;</p>
-      <p>Types of Autoencoders:</p>
-      <ol>
-      <li>
-      <p>Under complete Autoencoders&nbsp;</p>
-      </li>
-      <li>
-      <p>Sparse Autoencoders</p>
-      </li>
-      <li>
-      <p>Contractive Autoencoders</p>
-      </li>
-      <li>
-      <p>Denoising Autoencoders</p>
-      </li>
-      <li>
-      <p>Variational Autoencoders&nbsp;</p>
-      </li>
-      </ol>
-      <p>&nbsp;</p>
-      <p>Autoencoders are generally used for:</p>
-      <ol>
-      <li style=\"list-style-type: upper-alpha;">
-      <p>Anomaly detection</p>
-      </li>
-      <li style=\"list-style-type: upper-alpha;">
-      <p>Data denoising image and audio</p>
-      </li>
-      <li style=\"list-style-type: upper-alpha;">
-      <p>Image inpainting</p>
-      </li>
-      <li style=\"list-style-type: upper-alpha;">
-      <p>Information retrieval</p>
-      </li>
-      </ol>
-      </div>
-      </div>",
+      "pageContent": "<div><h2>COURSE CONTENT</h2></div><div><div><h2><strong>Auto Encoders</strong></h2><p>An autoencoder is a type of deep learning algorithm which is made to take in information and change it into a different representation. They are crucial in the creation of images. In the area of unsupervised machine learning, autoencoders are highly helpful. They can be used to lower the dimensions of the data and compress it.</p><p>&nbsp;</p><p>Autoencoders and Principle Component Analysis (PCA) vary primarily from each other in regards that while PCA identifies the directions along which data can be projected with the least amount of variation, Autoencoders rebuild our original input from a compressed version of it. This can be understood from the diagram below.</p><p>&nbsp;</p><p><img src=\"https://github.com/BassCoder2808/AIDL-Images/raw/main/AutoEncoder/aboutAutoEncoder.f4eb8e9e.png\" width=\"600\" height=\"300\"></p><p>&nbsp;</p><p>An autoencoder can be used to recreate the original data from the compressed data if someone requires it.</p><p>&nbsp;</p><p>Types of Autoencoders:</p><ol><li><p>Under complete Autoencoders&nbsp;</p></li><li><p>Sparse Autoencoders</p></li><li><p>Contractive Autoencoders</p></li><li><p>Denoising Autoencoders</p></li><li><p>Variational Autoencoders&nbsp;</p></li></ol><p>&nbsp;</p><p>Autoencoders are generally used for:</p><ol><li style=\"list-style-type: upper-alpha;\"><p>Anomaly detection</p></li><li style=\"list-style-type: upper-alpha;\"><p>Data denoising image and audio</p></li><li style=\"list-style-type: upper-alpha;\"><p>Image inpainting</p></li><li style=\"list-style-type: upper-alpha;\"><p>Information retrieval</p></li></ol></div></div>",
       "simulation-link": "Iframe link of Simulation",
       "test": [
         {
@@ -985,7 +1071,7 @@
             "Same as the original input",
             "Distorted",
             "Compressed",
-            "Expanded",
+            "Expanded"
           ],
           "correctOption": 2
         },
@@ -996,7 +1082,7 @@
             "Codes the input into latent images",
             "Decodes the input into original form",
             "Does not have any function",
-            "Decodes the input into compressed form",
+            "Decodes the input into compressed form"
           ],
           "correctOption": 3
         },
@@ -1007,9 +1093,10 @@
             "Identify unusual activity and predict market trends",
             "Predict fraudulent customers",
             "Classify best market performers",
-            "All of the Above",
+            "All of the Above"
           ],
           "correctOption": 0
+        },
         {
           "id": 3,
           "question": "How are autoencoders trained?",
@@ -1017,7 +1104,7 @@
             "By using unsupervised methods",
             "By using supervised methods",
             "By using reinforcement methods",
-            "None Of the above",
+            "None Of the above"
           ],
           "correctOption": 1
         },
@@ -1028,7 +1115,7 @@
             "It can misclassify input data",
             "It can eliminate vital information",
             "It is not accurate",
-            "All of the Above",
+            "All of the Above"
           ],
           "correctOption": 1
         }
