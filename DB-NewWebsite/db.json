@@ -560,7 +560,7 @@
       "id": "6",
       "aim": "YOLO(You only look once)",
       "pageContent": "<div><p>YOLO is a convolutional neural network (CNN) technique for doing object detection in real-time. The algorithm applies a single neural network to the full image, and then divides the image into regions and predicts bounding boxes and probabilities for each region.</p></div><div><div><div><h3>References:</h3><ul style=\"list-style-type: square;\"><li><a href=\"https://pjreddie.com/darknet/yolo/\" target=\"_blank\" rel=\"noopener\">YOLO</a></li><li><a href=\"https://medium.com/@jonathan_hui/real-time-object-detection-with-yolo-yolov2-28b1b93e2088\" target=\"_blank\" rel=\"noopener\">Real-time Object Detection with YOLO, YOLOv2 and now YOLOv3</a></li><li><a href=\"https://www.analyticsvidhya.com/blog/2018/12/practical-guide-object-detection-yolo-framewor-python/\" target=\"_blank\" rel=\"noopener\">A Practical Guide to Object Detection using the Popular YOLO Framework &ndash; Part III (with Python codes)</a></li></ul></div></div><div><a href=\"https://pjreddie.com/darknet/yolo/\" target=\"_blank\" rel=\"noopener\"><img src=\"https://pjreddie.com/media/image/Screen_Shot_2018-03-24_at_10.48.42_PM.png\" height=\"20%\"></a></div></div>",
-      "simulation-link": "Iframe link of Simulation",
+      "simulation-link": "https://karan-shah-2513.github.io/vlabs-ocr-yolo-posenet/#/yolo",
       "test": [
         {
           "id": 0,
@@ -608,7 +608,7 @@
       "id": "7",
       "aim": "Posenet",
       "pageContent": "<div><h2>COURSE CONTENT</h2></div><div><div><div><div><div>Posenet</div></div></div><div><p>PoseNet is a vision model that can be used to estimate the pose of a person in an image or video by estimating where key body joints are.</p></div><div><div><div><h3>References:</h3><ul style=\"list-style-type: square;\"><li><a href=\"https://www.tensorflow.org/lite/models/pose_estimation/overview\" target=\"_blank\" rel=\"noopener\" aria-invalid=\"true\">pose_estimation_overview</a></li><li><a href=\"https://medium.com/tensorflow/real-time-human-pose-estimation-in-the-browser-with-tensorflow-js-7dd0bc881cd5\" target=\"_blank\" rel=\"noopener\">Real-time Human Pose Estimation in the Browser with TensorFlow.js</a></li></ul></div></div></div></div></div>",
-      "simulation-link": "Iframe link of Simulation",
+      "simulation-link": "https://karan-shah-2513.github.io/vlabs-ocr-yolo-posenet/#/posenet",
       "test": [
         {
           "id": 0,
@@ -666,7 +666,7 @@
       "id": "8",
       "aim": "OCR(Optical Character Recognition)",
       "pageContent": "<div > <h2 > COURSE CONTENT < /h2 > </div > <div > <div > <div > <div > OCR < /div > <div > Optical Character Recognition < /div > </div > </div > <div > <p > Optical character recognition, or OCR, is a process which allows us to convert text based images into editable electronic documents. These images can be produced by scanners, cameras, read only files, etc. The images can include documents, invoices, legal forms, ID cards or OCR in the wild like reading street signs, shipping container numbers or vehicle number plates. < /p > </div > <div > <div > Tesseract < /div > </div > <div > <p > Tesseract is a general purpose OCR engine, but it works best when we have clean black text on solid white background in a common font. It also works well when the text is approximately horizontal and the text height is at least 20 pixels. If the text has a surrounding border, it may be detected as some random text. < /p > </div > <div > <div > <div > <h3 > References: < /h3 > <ul style =\"list-style-type: square\"> < li > <a href =\"https: // www.youtube.com/watch?v = cAkklvGE5io\" target =\"_blank\" rel =\"noopener\"> Optical Character Recognition & mdashSimply Explained < /a > </li > <li > <a href =\"https: // towardsdatascience.com/a-gentle-introduction-to-ocr-ee1469a201aa\" target =\"_blank\" rel =\"noopener\"> OCR implementation In Python < /a > </li > <li > <a href =\"https: // nanonets.com/blog/ocr-with-tesseract /\" target =\"_blank\" rel =\"noopener\"> Tessaeract: A Simple Explanation < /a > </li > </ul > </div > </div > </div > </div >",
-      "simulation-link": "Iframe link of Simulation",
+      "simulation-link": "https://karan-shah-2513.github.io/vlabs-ocr-yolo-posenet/#/ocr",
       "test": [
         {
           "id": 0,
